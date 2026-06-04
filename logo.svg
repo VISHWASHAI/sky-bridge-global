@@ -1,0 +1,186 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%" fill="none">
+  <!-- Brand Color Gradients -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1452A6" />
+      <stop offset="100%" stop-color="#0E2A4A" />
+    </linearGradient>
+    <linearGradient id="skyTextGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1B60B8" />
+      <stop offset="100%" stop-color="#0A3C7D" />
+    </linearGradient>
+  </defs>
+
+  <!-- 1. Outer Swirling Arc/Circle -->
+  <!-- Upper arc starting from left, wrapping around, ending with plane trail -->
+  <path d="M 120 300 C 90 200, 200 120, 360 150 C 375 154, 385 160, 395 166" stroke="url(#blueGrad)" stroke-width="4" stroke-linecap="round" fill="none"/>
+  
+  <!-- Clouds Silhouette at the top inside -->
+  <path d="M 160 210 Q 170 195 185 200 Q 195 185 215 190 Q 230 180 245 195 Q 260 190 270 205 Q 280 200 290 210 Z" fill="#E3F2FD" opacity="0.4" />
+  <path d="M 130 250 Q 140 238 152 242 Q 160 230 176 234 Q 188 226 200 238 Q 212 234 220 246 Z" fill="#E3F2FD" opacity="0.6" />
+
+  <!-- Airplane Silhouette at the top right -->
+  <g transform="translate(390, 150) rotate(-22) scale(0.7)">
+    <!-- Fuselage -->
+    <path d="M-40 0 C-20 -5, 20 -5, 40 0 C45 1, 50 3, 55 5 C45 6, 20 8, -40 3 Z" fill="#0E2A4A"/>
+    <!-- Wings -->
+    <path d="M-10 -2 L-25 -30 L-15 -32 L15 -2 Z" fill="#0E2A4A"/>
+    <path d="M-10 2 L-28 35 L-18 37 L15 2 Z" fill="#0E2A4A"/>
+    <!-- Tail fin -->
+    <path d="M-35 -2 L-48 -18 L-40 -18 L-30 -2 Z" fill="#0E2A4A"/>
+    <!-- Engines -->
+    <rect x="-5" y="-12" width="12" height="4" rx="2" fill="#1452A6"/>
+    <rect x="-5" y="8" width="12" height="4" rx="2" fill="#1452A6"/>
+  </g>
+
+  <!-- 2. Typography: "SKY" -->
+  <text x="250" y="270" font-family="'Times New Roman', Times, serif, Georgia" font-size="94" font-weight="bold" fill="url(#skyTextGrad)" text-anchor="middle" letter-spacing="4">SKY</text>
+
+  <!-- 3. Suspension Bridge Structure (Centerpiece) -->
+  <g transform="translate(0, 0)">
+    <!-- Bridge Towers (Vertical Pillars) -->
+    <!-- Left Tower -->
+    <path d="M 203 245 L 203 300" stroke="#0E2A4A" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 207 245 L 207 300" stroke="#0E2A4A" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="203" y1="255" x2="207" y2="255" stroke="#0E2A4A" stroke-width="2" />
+    <line x1="203" y1="270" x2="207" y2="270" stroke="#0E2A4A" stroke-width="2" />
+    <line x1="203" y1="285" x2="207" y2="285" stroke="#0E2A4A" stroke-width="2" />
+    <!-- Left Tower Spire Top -->
+    <polygon points="201,245 209,245 205,235" fill="#0E2A4A"/>
+
+    <!-- Right Tower -->
+    <path d="M 293 245 L 293 300" stroke="#0E2A4A" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 297 245 L 297 300" stroke="#0E2A4A" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="293" y1="255" x2="297" y2="255" stroke="#0E2A4A" stroke-width="2" />
+    <line x1="293" y1="270" x2="297" y2="270" stroke="#0E2A4A" stroke-width="2" />
+    <line x1="293" y1="285" x2="297" y2="285" stroke="#0E2A4A" stroke-width="2" />
+    <!-- Right Tower Spire Top -->
+    <polygon points="291,245 299,245 295,235" fill="#0E2A4A"/>
+
+    <!-- Main Suspension Cables -->
+    <!-- Center Span Cable Curve -->
+    <path d="M 205 245 Q 250 282 295 245" stroke="#0E2A4A" stroke-width="2.5" fill="none"/>
+    <!-- Left Outer Cable Curve -->
+    <path d="M 80 292 Q 150 270 205 245" stroke="#0E2A4A" stroke-width="2.5" fill="none"/>
+    <!-- Right Outer Cable Curve -->
+    <path d="M 295 245 Q 350 270 420 292" stroke="#0E2A4A" stroke-width="2.5" fill="none"/>
+
+    <!-- Vertical Suspension Hanger Ropes -->
+    <!-- Center hangers -->
+    <line x1="220" y1="255" x2="220" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="235" y1="266" x2="235" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="250" y1="271" x2="250" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="265" y1="266" x2="265" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="280" y1="255" x2="280" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    
+    <!-- Outer left hangers -->
+    <line x1="180" y1="256" x2="180" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="155" y1="267" x2="155" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="130" y1="277" x2="130" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    
+    <!-- Outer right hangers -->
+    <line x1="320" y1="256" x2="320" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="345" y1="267" x2="345" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+    <line x1="370" y1="277" x2="370" y2="294" stroke="#0E2A4A" stroke-width="1"/>
+
+    <!-- Bridge Roadway/Deck -->
+    <path d="M 60 294 L 440 294" stroke="#0E2A4A" stroke-width="5" stroke-linecap="round"/>
+    <path d="M 40 297 L 460 297" stroke="#0E2A4A" stroke-width="1" stroke-linecap="round"/>
+  </g>
+
+  <!-- 4. Typography: "BRIDGE" -->
+  <text x="250" y="365" font-family="'Times New Roman', Times, serif, Georgia" font-size="70" font-weight="bold" fill="#0E2A4A" text-anchor="middle" letter-spacing="6">BRIDGE</text>
+
+  <!-- 5. Vehicles Section (Land, Air, Ocean Icons) -->
+  <!-- LEFT: Container Truck -->
+  <g transform="translate(130, 400) scale(0.9)">
+    <!-- Trailer -->
+    <rect x="5" y="10" width="46" height="20" rx="1" fill="#0E2A4A"/>
+    <!-- Cab -->
+    <path d="M 52 15 L 62 15 L 68 21 L 68 30 L 52 30 Z" fill="#0E2A4A"/>
+    <rect x="55" y="17" width="6" height="5" rx="0.5" fill="#FFFFFF"/>
+    <!-- Wheels -->
+    <circle cx="15" cy="32" r="4.5" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="1.5"/>
+    <circle cx="26" cy="32" r="4.5" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="1.5"/>
+    <circle cx="45" cy="32" r="4.5" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="1.5"/>
+    <circle cx="60" cy="32" r="4.5" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="1.5"/>
+    <!-- Road Line -->
+    <line x1="-15" y1="36" x2="75" y2="36" stroke="#0E2A4A" stroke-width="1.5"/>
+  </g>
+
+  <!-- CENTER: Airplane Facing Forward -->
+  <g transform="translate(250, 415) scale(0.95)">
+    <!-- Fuselage Body -->
+    <ellipse cx="0" cy="0" rx="7" ry="10" fill="#0E2A4A"/>
+    <!-- Canopy/Window -->
+    <path d="M-4 -3 Q 0 -7 4 -3 Z" fill="#FFFFFF"/>
+    <!-- Main Wings -->
+    <path d="M -7 -1 L -45 5 L -45 10 L -7 5 Z" fill="#0E2A4A"/>
+    <path d="M 7 -1 L 45 5 L 45 10 L 7 5 Z" fill="#0E2A4A"/>
+    <!-- Tail Stabilizers -->
+    <path d="M -5 7 L -18 10 L -18 12 L -4 9 Z" fill="#0E2A4A"/>
+    <path d="M 5 7 L 18 10 L 18 12 L 4 9 Z" fill="#0E2A4A"/>
+    <path d="M 0 5 L 0 -12 L -1.5 -12 L -1.5 5 Z" fill="#0E2A4A"/> <!-- Vertical Fin -->
+    <!-- Engines under wing -->
+    <rect x="-24" y="5" width="6" height="9" rx="2" fill="#1452A6"/>
+    <rect x="18" y="5" width="6" height="9" rx="2" fill="#1452A6"/>
+  </g>
+
+  <!-- RIGHT: Cargo Container Ship -->
+  <g transform="translate(325, 400) scale(0.95)">
+    <!-- Ship Hull -->
+    <path d="M 0 28 L 60 28 L 72 16 L 68 14 L 4 14 Z" fill="#0E2A4A"/>
+    <!-- Deck House Structure -->
+    <rect x="8" y="4" width="10" height="10" fill="#0E2A4A"/>
+    <rect x="10" y="-1" width="6" height="5" fill="#0E2A4A"/>
+    <!-- Cargo Containers stack -->
+    <rect x="22" y="6" width="10" height="8" fill="#1452A6" stroke="#FFFFFF" stroke-width="0.5"/>
+    <rect x="32" y="6" width="10" height="8" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="0.5"/>
+    <rect x="42" y="6" width="10" height="8" fill="#1452A6" stroke="#FFFFFF" stroke-width="0.5"/>
+    <rect x="52" y="8" width="10" height="6" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="0.5"/>
+    <rect x="26" y="-2" width="10" height="8" fill="#0E2A4A" stroke="#FFFFFF" stroke-width="0.5"/>
+    <rect x="36" y="-2" width="10" height="8" fill="#1452A6" stroke="#FFFFFF" stroke-width="0.5"/>
+    <!-- Waves -->
+    <path d="M -5 29 Q 10 32 25 29 Q 40 32 55 29 Q 70 32 80 29" stroke="#1452A6" stroke-width="2" fill="none"/>
+    <path d="M 0 32 Q 15 35 30 32 Q 45 35 60 32 Q 75 35 85 32" stroke="#E3F2FD" stroke-width="1.5" fill="none"/>
+  </g>
+
+  <!-- 6. Bottom Globe & World Map -->
+  <g transform="translate(250, 500)">
+    <!-- Outer Globe ellipse -->
+    <ellipse cx="0" cy="0" rx="140" ry="60" stroke="#1452A6" stroke-width="2.5" />
+    <ellipse cx="0" cy="0" rx="120" ry="30" stroke="#1452A6" stroke-width="1" opacity="0.3" stroke-dasharray="4 4"/>
+    <line x1="-140" y1="0" x2="140" y2="0" stroke="#1452A6" stroke-width="1.5"/>
+    
+    <!-- Longitude grid lines -->
+    <path d="M 0 -60 Q -50 0 0 60" stroke="#1452A6" stroke-width="1" opacity="0.5"/>
+    <path d="M 0 -60 Q 50 0 0 60" stroke="#1452A6" stroke-width="1" opacity="0.5"/>
+    <path d="M 0 -60 Q -100 0 0 60" stroke="#1452A6" stroke-width="1" opacity="0.3"/>
+    <path d="M 0 -60 Q 100 0 0 60" stroke="#1452A6" stroke-width="1" opacity="0.3"/>
+
+    <!-- Simplified Map Continents (Rendered on top of Globe) -->
+    <!-- North America & South America (Left side) -->
+    <path d="M -110 -25 Q -90 -20 -80 -10 Q -70 5 -75 15 Q -80 30 -90 35 Q -105 38 -100 25 Q -95 15 -105 0 Q -115 -10 -115 -20 Z" fill="#1452A6" opacity="0.85"/>
+    <!-- Africa & Europe (Center) -->
+    <path d="M -20 -35 Q -10 -35 10 -30 Q 20 -20 15 -10 Q 5 15 -5 20 Q -25 25 -30 15 Q -32 5 -25 -10 Z" fill="#1452A6" opacity="0.85"/>
+    <!-- Asia & Australia (Right side) -->
+    <path d="M 30 -30 Q 60 -35 90 -25 Q 110 -15 105 5 Q 85 10 75 0 Q 55 5 45 -10 Z" fill="#1452A6" opacity="0.85"/>
+    <path d="M 85 15 Q 95 15 100 25 Q 90 35 80 25 Z" fill="#1452A6" opacity="0.85"/> <!-- Australia -->
+  </g>
+
+  <!-- 7. Footer text under logo -->
+  <!-- "— GLOBAL —" -->
+  <g transform="translate(250, 585)">
+    <!-- Horizontal lines flanking GLOBAL -->
+    <line x1="-150" y1="-6" x2="-70" y2="-6" stroke="#1452A6" stroke-width="1.5"/>
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="28" font-weight="bold" fill="#0E2A4A" text-anchor="middle" letter-spacing="10">GLOBAL</text>
+    <line x1="70" y1="-6" x2="150" y2="-6" stroke="#1452A6" stroke-width="1.5"/>
+  </g>
+
+  <!-- Tagline: "YOUR GATEWAY ACROSS LAND, AIR & OCEAN" -->
+  <g transform="translate(250, 615)">
+    <line x1="-200" y1="-4" x2="-160" y2="-4" stroke="#1452A6" stroke-width="1.5"/>
+    <text x="0" y="0" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#1452A6" text-anchor="middle" letter-spacing="1.5">YOUR GATEWAY ACROSS LAND, AIR &amp; OCEAN</text>
+    <line x1="160" y1="-4" x2="200" y2="-4" stroke="#1452A6" stroke-width="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+# Python helper scripts and scratch folders
+scratch/
+*.py
+.git/
+node_modules/
+.gemini/

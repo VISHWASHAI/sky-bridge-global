@@ -1,0 +1,18 @@
+{
+  "name": "sky-bridge-global-prototype",
+  "version": "1.0.0",
+  "description": "High-fidelity interactive prototype and Figma-ready design system for Sky Bridge Global.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve ./",
+    "start": "npx serve ./"
+  },
+  "keywords": [
+    "logistics",
+    "prototype",
+    "figma",
+    "design-system"
+  ],
+  "author": "Antigravity Senior Product Designer",
+  "license": "ISC"
+}

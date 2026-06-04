@@ -1,0 +1,68 @@
+/* ==========================================================================
+   SITE LAYOUT — replaces simulator chrome
+   ========================================================================== */
+body {
+    background-color: var(--color-light-bg);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Scroll offset so anchors clear the fixed pill nav */
+.view-container > *:first-child {
+    scroll-margin-top: 100px;
+}
+
+.view-container {
+    width: 100%;
+    display: none;
+}
+.view-container:first-of-type {
+    /* home shown by default via JS */
+}
+
+/* Toast notification */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: var(--navy-800);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    z-index: 99999;
+    animation: slideInRight 0.3s var(--easing-premium);
+}
+@keyframes slideInRight {
+    from { transform: translateX(80px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+}
+
+/* A4 document pages (letterhead/invoice stubs — keep for any future use) */
+.a4-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: var(--space-xl);
+    background: #e2e8f0;
+    min-height: 100vh;
+}
+.a4-page {
+    width: 794px;
+    min-height: 1123px;
+    background: white;
+    padding: 60px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+    border-radius: 4px;
+}
+.a4-page.slide-in {
+    animation: slideInUp 0.45s var(--easing-premium);
+}
+@keyframes slideInUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to   { transform: translateY(0);    opacity: 1; }
+}

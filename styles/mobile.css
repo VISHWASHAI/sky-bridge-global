@@ -78,9 +78,13 @@
 @media (max-width: 768px) {
 
     /* ── Top contact bar ─────────────────────────────────────────────────── */
-    .top-contact-item span { display: none; }
-    .top-contact-bar-inner { justify-content: center; gap: var(--space-sm); }
-    .top-contact-left { gap: var(--space-sm); }
+    /* Drop the long email label; keep the tappable phone number visible */
+    .top-contact-item.is-email span { display: none; }
+    .top-contact-bar-inner { justify-content: space-between; gap: var(--space-sm); }
+    .top-contact-left { gap: 14px; }
+    .top-contact-item { font-size: 12px; }
+    .top-contact-socials { gap: 6px; }
+    .top-contact-socials a { width: 26px; height: 26px; }
 
     /* ── Header pill ─────────────────────────────────────────────────────── */
     .site-header {
@@ -109,6 +113,12 @@
         top: 80px;
         left: 12px;
         right: 12px;
+        /* Override the desktop pill's translateX(-50%) centering, which would
+           otherwise drag the drawer off the left edge */
+        transform: none;
+        /* Override the desktop pill's align-items:center so links fill the
+           drawer width and read as a standard left-aligned mobile menu */
+        align-items: stretch;
         background: rgba(10, 19, 34, 0.97);
         backdrop-filter: blur(20px);
         border: 1px solid rgba(66,149,232,0.18);
@@ -154,11 +164,29 @@
     .hero-section { min-height: 100svh; }
 
     .hero-title {
-        font-size: clamp(2rem, 8vw, 2.8rem) !important;
+        font-size: clamp(1.9rem, 7.6vw, 2.6rem) !important;
+        line-height: 1.14 !important;
+        letter-spacing: -0.02em !important;
         margin: 14px 0 12px !important;
+        /* Normal text flow on mobile so the headline wraps line-by-line instead
+           of the desktop flex word-grid jamming words onto one clipped row */
+        display: block !important;
+        overflow: visible !important;
+        overflow-wrap: break-word;
+    }
+    .hero-title.animate-word-slide span {
+        display: inline;
+        transform: none !important;
+        opacity: 1 !important;
+        animation: none !important;
     }
 
-    .hero-subtitle { font-size: 0.95rem !important; }
+    .hero-tag { font-size: 11px !important; }
+
+    .hero-subtitle {
+        font-size: 0.95rem !important;
+        line-height: 1.6 !important;
+    }
 
     .hero-btns {
         flex-direction: column;
@@ -167,10 +195,33 @@
     }
     .hero-btns button { width: 100%; justify-content: center; }
 
+    /* Hero tracking bar — stack input over a full-width button so nothing
+       overflows the viewport on narrow screens */
+    .hero-track-wrap { max-width: 100% !important; }
+    .hero-track-bar {
+        flex-wrap: wrap;
+        border-radius: 18px !important;
+        padding: 12px 14px !important;
+        gap: 10px !important;
+    }
+    .hero-track-bar #hero-track-input {
+        flex: 1 1 100%;
+        order: 1;
+        min-width: 0;
+    }
+    .hero-track-bar #hero-track-btn {
+        order: 2;
+        width: 100%;
+        border-radius: 12px !important;
+        padding: 12px 22px !important;
+    }
+    .hero-track-bar > svg { order: 0; }
+
     /* Hero trust bar — 2 per row */
     .hero-trust-bar {
         flex-wrap: wrap;
-        gap: 12px 0;
+        gap: 16px 0;
+        margin-top: 32px !important;
     }
     .hero-trust-bar > div { width: 50%; }
     .hero-trust-bar > div[style*="width:1px"] { display: none; }
@@ -304,10 +355,18 @@
 }
 
 /* ==========================================================================
-   SMALL MOBILE  ≤ 380px
+   SMALL MOBILE  ≤ 400px
    ========================================================================== */
-@media (max-width: 380px) {
-    .hero-title { font-size: 1.75rem !important; }
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.55rem !important;
+        line-height: 1.16 !important;
+    }
+    .hero-subtitle { font-size: 0.9rem !important; }
     .site-header { width: calc(100% - 16px); }
     .header-container { padding: 0 12px; }
+
+    /* Keep the brand wordmark from crowding the hamburger on tiny screens */
+    .header-logo span { font-size: 14px !important; }
+    .top-contact-item { font-size: 11px !important; }
 }

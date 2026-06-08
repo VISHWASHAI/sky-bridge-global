@@ -98,7 +98,11 @@
 .hero-title span {
     background: linear-gradient(135deg, var(--sky-300) 0%, var(--blue-400) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
+    /* Prevent the gradient-clipped glyphs from being cut at the inline box edge */
+    padding-right: 0.08em;
+    margin-right: -0.08em;
 }
 
 .hero-subtitle {
@@ -645,6 +649,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.15em 0.3em;
+    /* Pad the clip box sideways so the vertical slide-reveal never trims wide
+       gradient words; negative margin keeps visual alignment unchanged. */
+    padding: 0 0.12em;
+    margin: 0 -0.12em;
 }
 .animate-word-slide span {
     display: inline-block;

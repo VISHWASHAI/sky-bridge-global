@@ -50,18 +50,31 @@ function navigateToPage(pageId) {
     if (pageId === 'tracking' && typeof window.renderTrackingResults === 'function') {
         setTimeout(() => window.renderTrackingResults('SBG-102948-US'), 50);
     }
+
+    // Keep the URL hash in sync for shareable links / browser back-forward
+    if (target && ('#' + pageId) !== location.hash) {
+        history.replaceState(null, '', '#' + pageId);
+    }
 }
 
 // Also expose scrollToSection alias used by some buttons
 window.scrollToSection = (sectionId) => navigateToPage(sectionId.replace('-section', ''));
+
+// Deep-link support: resolve the initial view from the URL hash (e.g. #contact)
+const KNOWN_VIEWS = ['home', 'about', 'services', 'tracking', 'contact', 'careers'];
+function viewFromHash() {
+    const id = (location.hash || '').replace('#', '');
+    return KNOWN_VIEWS.includes(id) ? id : 'home';
+}
+window.addEventListener('hashchange', () => navigateToPage(viewFromHash()));
 
 /* ==========================================================================
    REST OF APP — runs after DOM is ready
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Show home page on first load
-    navigateToPage('home');
+    // Show the view from the URL hash on first load (defaults to home)
+    navigateToPage(viewFromHash());
 
     // Initialize Interactive Forms
     initForms();

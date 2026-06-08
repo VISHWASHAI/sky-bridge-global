@@ -244,6 +244,11 @@
         grid-column: span 1 !important;
     }
 
+    /* ── Fixed-column grids → responsive (these caused horizontal overflow) ─ */
+    .choose-grid { grid-template-columns: 1fr 1fr !important; }   /* 5 cols → 2 */
+    .tracking-info-grid { grid-template-columns: 1fr 1fr !important; }   /* 3 → 2 */
+    .portal-grid-3 { grid-template-columns: 1fr !important; }   /* 3 → 1 */
+
     /* ── Services magazine grid ──────────────────────────────────────────── */
     [style*="grid-template-columns:1fr 1fr"] {
         display: flex !important;

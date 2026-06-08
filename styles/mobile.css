@@ -115,7 +115,9 @@
         right: 12px;
         /* Override the desktop pill's translateX(-50%) centering, which would
            otherwise drag the drawer off the left edge */
-        transform: none;
+        transform: none !important;
+        left: 12px !important;
+        right: 12px !important;
         /* Override the desktop pill's align-items:center so links fill the
            drawer width and read as a standard left-aligned mobile menu */
         align-items: stretch;

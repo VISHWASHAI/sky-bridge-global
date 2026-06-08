@@ -218,11 +218,111 @@
 }
 
 /* ==========================================================================
+   TOP CONTACT BAR
+   ========================================================================== */
+.top-contact-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+    background: linear-gradient(90deg, var(--navy-900) 0%, var(--navy-800) 100%);
+    border-bottom: 1px solid rgba(66, 149, 232, 0.14);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 13px;
+}
+.top-contact-bar-inner {
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+}
+.top-contact-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    min-width: 0;
+}
+.top-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.2s;
+}
+.top-contact-item svg { flex-shrink: 0; color: var(--blue-400); }
+.top-contact-item:hover { color: #fff; }
+
+.top-contact-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    flex-shrink: 0;
+}
+.top-contact-socials {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.top-contact-socials a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.65);
+    transition: all 0.2s;
+}
+.top-contact-socials a:hover {
+    background: var(--color-primary-blue);
+    color: #fff;
+}
+.top-contact-track {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 30px;
+    padding: 4px 4px 4px 14px;
+}
+.top-contact-track input {
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 12px;
+    width: 140px;
+    font-family: var(--font-primary);
+}
+.top-contact-track input::placeholder { color: rgba(255, 255, 255, 0.4); }
+.top-contact-track button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-primary-blue);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.top-contact-track button:hover { background: var(--blue-400); }
+
+/* ==========================================================================
    FLOATING PILL NAVIGATION
    ========================================================================== */
 .site-header {
     position: fixed;
-    top: 20px;
+    top: 62px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
@@ -237,7 +337,7 @@
     transition: all 0.4s var(--easing-premium);
 }
 .site-header.shrink {
-    top: 10px;
+    top: 52px;
     background: rgba(10, 19, 34, 0.95);
     box-shadow: 0 12px 48px rgba(0, 0, 0, 0.5);
 }

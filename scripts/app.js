@@ -115,6 +115,26 @@ document.addEventListener('DOMContentLoaded', () => {
        INTERACTIVE FORMS & CALCULATORS
        ========================================================================== */
     function initForms() {
+        // Top contact bar tracker
+        const topbarTrackForm = document.getElementById('topbar-track-form');
+        const topbarTrackInput = document.getElementById('topbar-track-input');
+        if (topbarTrackForm && topbarTrackInput) {
+            topbarTrackForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const code = topbarTrackInput.value.trim();
+                if (code) {
+                    navigateToPage('tracking');
+                    const trackingInput = document.getElementById('tracking-number-input');
+                    if (trackingInput) {
+                        trackingInput.value = code;
+                        renderTrackingResults(code);
+                    }
+                } else {
+                    showToast('Please enter a tracking number.');
+                }
+            });
+        }
+
         // Hero search trackers
         const heroTrackBtn = document.getElementById('hero-track-btn');
         const heroTrackInput = document.getElementById('hero-track-input');

@@ -52,9 +52,11 @@
    TABLET  ≤ 1024px
    ========================================================================== */
 @media (max-width: 1024px) {
+    .top-contact-track { display: none; }
+
     .site-header {
         width: calc(100% - 40px);
-        top: 12px;
+        top: 54px;
     }
 
     .header-container { padding: 0 20px; }
@@ -75,10 +77,15 @@
    ========================================================================== */
 @media (max-width: 768px) {
 
+    /* ── Top contact bar ─────────────────────────────────────────────────── */
+    .top-contact-item span { display: none; }
+    .top-contact-bar-inner { justify-content: center; gap: var(--space-sm); }
+    .top-contact-left { gap: var(--space-sm); }
+
     /* ── Header pill ─────────────────────────────────────────────────────── */
     .site-header {
         width: calc(100% - 24px);
-        top: 10px;
+        top: 50px;
         border-radius: 16px;
     }
 
@@ -140,7 +147,7 @@
     }
 
     /* Logo image size */
-    .header-logo img { height: 36px !important; max-width: 130px !important; }
+    .header-logo img { height: 40px !important; width: 40px !important; }
 
     /* ── Hero ────────────────────────────────────────────────────────────── */
     .hero-section { min-height: 100svh; }

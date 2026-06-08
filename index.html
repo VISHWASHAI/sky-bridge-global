@@ -12,12 +12,50 @@
     <link rel="stylesheet" href="styles/mobile.css">
 </head>
 <body>
-                                
+
+<!-- TOP CONTACT BAR -->
+<div class="top-contact-bar">
+    <div class="container top-contact-bar-inner">
+        <div class="top-contact-left">
+            <a href="mailto:info@skybridgeglobal.com" class="top-contact-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span>info@skybridgeglobal.com</span>
+            </a>
+            <a href="tel:+919876543210" class="top-contact-item">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span>+91 98765 43210</span>
+            </a>
+        </div>
+        <div class="top-contact-right">
+            <div class="top-contact-socials">
+                <a href="https://www.instagram.com/skybridgeglobal" target="_blank" rel="noopener" aria-label="Instagram">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+                <a href="https://www.facebook.com/skybridgeglobal" target="_blank" rel="noopener" aria-label="Facebook">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+                </a>
+            </div>
+            <form class="top-contact-track" id="topbar-track-form">
+                <input type="text" id="topbar-track-input" placeholder="Track Your Shipment">
+                <button type="submit" id="topbar-track-btn" aria-label="Track shipment">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- SITE HEADER -->
 <header class="site-header" id="site-header">
     <div class="header-container">
         <div class="header-logo" onclick="navigateToPage('home')" style="cursor:pointer;">
-                                            <img src="images/logo.png" alt="Sky Bridge Global" style="height: 52px; width: auto; background: #ffffff; border-radius: 8px; padding: 4px 10px;">
+                                            <img src="images/logo_badge_circle.png" alt="Sky Bridge Global" style="height: 52px; width: 52px; object-fit: cover; border-radius: 50%; background: #ffffff;">
                                             <!-- REMOVED_SVG_START
                                             <svg viewBox="0 0 500 650" style="height: 40px; width: 31px; display: inline-block; flex-shrink: 0;" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <defs>
@@ -164,7 +202,7 @@
                                     <div id="home-section">
 <!-- HERO SECTION -->
 <section class="hero-section" style="background: linear-gradient(160deg, rgba(6,12,24,0.88) 0%, rgba(10,19,34,0.82) 60%, rgba(15,28,48,0.70) 100%), url('images/hero_bg.png') no-repeat center center / cover;">
-    <div class="container" style="position:relative; z-index:2; padding-top: 120px; padding-bottom: 80px;">
+    <div class="container" style="position:relative; z-index:2; padding-top: 160px; padding-bottom: 80px;">
         <div class="hero-content" style="max-width: 720px;">
             <span class="hero-tag animate-fade-in">&#9992;&nbsp; Your Gateway Across Land, Air &amp; Ocean</span>
             <h1 class="hero-title animate-word-slide" style="margin: 20px 0 16px;">
@@ -668,7 +706,7 @@
                                         <!-- About hero band -->
                                         <div style="background:linear-gradient(160deg,#060c18 0%,#0d1627 50%,#0a1322 100%); position:relative; overflow:hidden;">
                                             <img src="images/about_banner.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.18;">
-                                            <div class="container" style="position:relative; z-index:2; padding-top:100px; padding-bottom:64px;">
+                                            <div class="container" style="position:relative; z-index:2; padding-top:140px; padding-bottom:64px;">
                                                 <span class="section-label" style="color:#4295e8; border-color:#4295e8;">Corporate Profile</span>
                                                 <h1 style="font-family:var(--font-header); font-size:clamp(2rem,4vw,3.2rem); font-weight:800; color:#fff; margin:12px 0 16px; line-height:1.15; letter-spacing:-0.02em;">Connecting Supply Chains,<br>Delivering Excellence</h1>
                                                 <p style="color:rgba(255,255,255,0.55); font-size:1rem; max-width:560px; line-height:1.75;">From Kolar, Karnataka — we've built a trusted multi-modal logistics network connecting Indian businesses to global trade routes.</p>
@@ -856,7 +894,7 @@
                                          SECTION: SERVICES
                                          ========================================== -->
                                     <div id="view-services" class="view-container" style="display:none; text-align:left;">
-                                    <div id="services-section" class="reveal-fade-up" style="padding-top: var(--space-xl); margin-bottom: var(--space-3xl);">
+                                    <div id="services-section" class="reveal-fade-up" style="padding-top: 140px; margin-bottom: var(--space-3xl);">
                                         <div class="section-header">
                                             <span class="section-label">Logistics Solutions</span>
                                             <h2 class="section-title">Freight Routing Capabilities</h2>
@@ -1162,7 +1200,7 @@
                                          ========================================== -->
                                     <div id="view-tracking" class="view-container" style="display:none;">
                                         <!-- Dark dashboard hero band -->
-                                        <div style="background: linear-gradient(135deg, #060c18 0%, #0a1322 100%); padding: 48px 0 36px; margin-bottom:0;">
+                                        <div style="background: linear-gradient(135deg, #060c18 0%, #0a1322 100%); padding: 140px 0 36px; margin-bottom:0;">
                                             <div class="container">
                                                 <span class="section-label" style="color:#4295e8; border-color:#4295e8;">Real-Time Ledger</span>
                                                 <h2 style="font-family:var(--font-header); font-size:2.2rem; font-weight:800; color:#fff; margin:10px 0 8px; letter-spacing:-0.02em;">Cargo Transit Tracking</h2>
@@ -1215,8 +1253,8 @@
                                     <div id="view-contact" class="view-container" style="display:none;">
                                         <div style="display:grid; grid-template-columns:420px 1fr; min-height:100vh;">
                                             <!-- LEFT: dark panel -->
-                                            <div style="background:linear-gradient(160deg,#060c18 0%,#0a1322 100%); padding:80px 48px; display:flex; flex-direction:column; justify-content:center;">
-                                                <img src="images/logo.png" alt="Sky Bridge Global" style="height:36px; max-width:160px; width:auto; object-fit:contain; background:#fff; border-radius:8px; padding:4px 10px; margin-bottom:40px;">
+                                            <div style="background:linear-gradient(160deg,#060c18 0%,#0a1322 100%); padding:150px 48px 80px; display:flex; flex-direction:column; justify-content:center;">
+                                                <img src="images/logo_badge_circle.png" alt="Sky Bridge Global" style="height:64px; width:64px; object-fit:cover; border-radius:50%; background:#fff; margin-bottom:40px;">
                                                 <span class="section-label" style="color:#4295e8; border-color:#4295e8;">Support Desk</span>
                                                 <h2 style="font-family:var(--font-header); font-size:2rem; font-weight:800; color:#fff; margin:12px 0 16px; line-height:1.2;">Get in Touch<br>with Our Team</h2>
                                                 <p style="color:rgba(255,255,255,0.5); font-size:14px; line-height:1.75; margin-bottom:40px;">Submit freight inquiries, request customs clearance quotes, or reach us at our office directly.</p>
@@ -1256,7 +1294,7 @@
                                             </div>
 
                                             <!-- RIGHT: white form panel -->
-                                            <div style="background:#f8fafc; display:flex; align-items:center; justify-content:center; padding:80px 64px;">
+                                            <div style="background:#f8fafc; display:flex; align-items:center; justify-content:center; padding:150px 64px 80px;">
                                                 <div style="width:100%; max-width:520px;">
                                                     <h3 style="font-family:var(--font-header); font-size:1.6rem; font-weight:800; color:var(--color-primary-navy); margin-bottom:6px;">Send us a Message</h3>
                                                     <p style="color:var(--color-text-muted); font-size:14px; margin-bottom:32px;">We'll respond within one business day.</p>
@@ -1294,7 +1332,7 @@
                                 
                                 <div id="view-careers" class="view-container" style="display:none;">
                                     <!-- Careers hero band -->
-                                    <div style="background:linear-gradient(160deg,#060c18 0%,#0a1322 100%); padding:80px 0 48px;">
+                                    <div style="background:linear-gradient(160deg,#060c18 0%,#0a1322 100%); padding:140px 0 48px;">
                                         <div class="container">
                                             <span class="section-label" style="color:#4295e8; border-color:#4295e8;">Grow With Us</span>
                                             <h1 style="font-family:var(--font-header); font-size:clamp(1.8rem,3.5vw,2.8rem); font-weight:800; color:#fff; margin:12px 0 12px; line-height:1.15;">Open Logistics Positions</h1>

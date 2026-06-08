@@ -35,6 +35,13 @@ function navigateToPage(pageId) {
     const target = document.getElementById('view-' + pageId);
     if (target) {
         target.style.display = 'block';
+        // Reveal its scroll-animated content immediately. IntersectionObserver
+        // does not reliably re-fire for elements switched from display:none to
+        // block during SPA navigation on some mobile browsers, which otherwise
+        // leaves the freshly-opened page blank (content stuck at opacity:0).
+        target.querySelectorAll(
+            '.reveal-fade-up, .reveal-stagger-container, .reveal-fade-in, .text-reveal-ltr, .journey-section, .slide-in-left, .slide-in-right'
+        ).forEach(el => el.classList.add('active'));
     }
 
     // Scroll to top instantly
@@ -72,6 +79,11 @@ window.addEventListener('hashchange', () => navigateToPage(viewFromHash()));
    REST OF APP — runs after DOM is ready
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Testimonial carousel state — declared up front so startTestimonialAutoPlay()
+    // (called below) doesn't hit a temporal-dead-zone error that would abort init.
+    let testimonialTimer = null;
+    let currentTestimonialIndex = 0;
 
     // Show the view from the URL hash on first load (defaults to home)
     navigateToPage(viewFromHash());
@@ -563,10 +575,8 @@ function animateJourneyPipeline() {
     }
 /* ==========================================================================
        TESTIMONIAL CAROUSEL SLIDER
+       (state declared at the top of this DOMContentLoaded scope)
        ========================================================================== */
-    let testimonialTimer = null;
-    let currentTestimonialIndex = 0;
-
     window.setTestimonialSlide = (index) => {
         const slides = document.querySelectorAll('.testimonial-slide');
         const dots = document.querySelectorAll('.carousel-dots .dot');

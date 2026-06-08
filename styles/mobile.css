@@ -147,7 +147,8 @@
     }
 
     /* Logo image size */
-    .header-logo img { height: 40px !important; width: 40px !important; }
+    .header-logo img { height: 44px !important; width: 44px !important; }
+    .header-logo span { font-size: 15px !important; }
 
     /* ── Hero ────────────────────────────────────────────────────────────── */
     .hero-section { min-height: 100svh; }

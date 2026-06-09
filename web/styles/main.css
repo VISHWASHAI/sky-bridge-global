@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ==========================================================================
+   DESIGN TOKENS & VARIABLES
+   ========================================================================== */
+:root {
+    /* Color Palette */
+    --navy-900: #0a1322;
+    --navy-800: #0f1c30;
+    --navy-700: #17283c;
+    --blue-600: #1b4d8f;
+    --blue-500: #2970c6;
+    --blue-400: #4295e8;
+    --sky-300: #88c6fc;
+    --sky-100: #e3f2fd;
+    --accent-gold: #f4b400;
+    --accent-orange: #ff6f00;
+    
+    /* Semantic Colors */
+    --color-primary-navy: var(--navy-800);
+    --color-primary-blue: var(--blue-600);
+    --color-accent-sky: var(--blue-500);
+    --color-accent-glow: var(--blue-400);
+    --color-warning-gold: var(--accent-gold);
+    --color-light-bg: #f8fafc;
+    --color-sidebar-bg: var(--navy-900);
+    --color-card-bg: #ffffff;
+    --color-text-main: #1e293b;
+    --color-text-muted: #64748b;
+    --color-text-light: #94a3b8;
+    --color-text-white: #ffffff;
+    --color-border: #e2e8f0;
+    --color-border-focus: var(--blue-400);
+    
+    --color-success: #10b981;
+    --color-success-bg: #ecfdf5;
+    --color-warning: #f59e0b;
+    --color-warning-bg: #fffbeb;
+    --color-danger: #ef4444;
+    --color-danger-bg: #fef2f2;
+    
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-header: 'Outfit', var(--font-primary);
+    
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Spacing System */
+    --space-2xs: 0.25rem;
+    --space-xs: 0.5rem;
+    --space-sm: 0.75rem;
+    --space-md: 1rem;
+    --space-lg: 1.5rem;
+    --space-xl: 2rem;
+    --space-2xl: 3rem;
+    --space-3xl: 4rem;
+    
+    /* Borders & Shadows */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-2xl: 24px;
+    --radius-full: 9999px;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+    --shadow-glow: 0 0 15px rgba(41, 112, 198, 0.15);
+    
+    /* Layouts and Aspect */
+    --width-desktop: 1440px;
+    --width-tablet: 768px;
+    --width-mobile: 390px;
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --easing-premium: cubic-bezier(0.16, 1, 0.3, 1);
+    --shadow-premium: 0 20px 40px -15px rgba(10, 19, 34, 0.08), 0 15px 25px -10px rgba(10, 19, 34, 0.04);
+    --shadow-glow: 0 0 25px rgba(41, 112, 198, 0.2);
+    --shadow-glow-success: 0 0 25px rgba(16, 185, 129, 0.2);
+}
+
+/* ==========================================================================
+   CSS RESET
+   ========================================================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--color-light-bg);
+    color: var(--color-text-main);
+    line-height: 1.7;
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    outline: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+svg {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* ==========================================================================
+   GLOBAL UTILITIES
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+}
+
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Grid & Flex */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.align-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.flex-wrap { flex-wrap: wrap; }
+
+.grid { display: grid; }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* Typography Helper */
+.heading-1 { font-family: var(--font-header); font-size: var(--font-size-5xl); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+.heading-2 { font-family: var(--font-header); font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 800; line-height: 1.15; letter-spacing: -0.025em; }
+.heading-3 { font-family: var(--font-header); font-size: var(--font-size-xl); font-weight: 700; line-height: 1.3; letter-spacing: -0.01em; }
+.heading-4 { font-family: var(--font-header); font-size: var(--font-size-lg); font-weight: 600; line-height: 1.4; }
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.badge-primary { background-color: var(--sky-100); color: var(--color-primary-blue); }
+.badge-success { background-color: var(--color-success-bg); color: var(--color-success); }
+.badge-warning { background-color: var(--color-warning-bg); color: var(--color-warning); }
+.badge-danger { background-color: var(--color-danger-bg); color: var(--color-danger); }
+.badge-navy { background-color: var(--navy-700); color: var(--color-text-white); }
+
+/* Scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-light-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-text-light);
+    border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal-fade-up {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-fade-in {
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-fade-in.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.reveal-stagger {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1), transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-stagger.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+

@@ -1,15 +1,41 @@
 "use client";
 
 import { useState } from "react";
+import { getSupabaseBrowserClient, isSupabaseConfigured } from "@/lib/supabase/client";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [submitting, setSubmitting] = useState(false);
 
-  // NOTE: v1 ships tracking + serviceability against Supabase. Wiring this form
-  // to an `enquiries` table + email notification is the next backend phase;
-  // for now it confirms locally so the UI flow is complete.
-  function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setError(null);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const company_name = String(data.get("company_name") || "").trim();
+    const contact_name = String(data.get("contact_name") || "").trim();
+    const email = String(data.get("email") || "").trim();
+    const message = String(data.get("message") || "").trim();
+
+    const supabase = getSupabaseBrowserClient();
+    if (!supabase) {
+      setError("Backend is not configured yet. Please try again later.");
+      return;
+    }
+
+    setSubmitting(true);
+    const { error: insertError } = await supabase
+      .from("enquiries")
+      .insert({ company_name, contact_name, email, message });
+    setSubmitting(false);
+
+    if (insertError) {
+      setError("Something went wrong sending your enquiry. Please try again.");
+      return;
+    }
+
     setSent(true);
   }
 
@@ -28,24 +54,27 @@ export default function ContactForm() {
     <form className="card" onSubmit={onSubmit} style={{ textAlign: "left" }}>
       <div className="form-group">
         <label className="form-label">Company Name</label>
-        <input className="form-control" placeholder="Your Enterprises Ltd." required />
+        <input name="company_name" className="form-control" placeholder="Your Enterprises Ltd." required />
       </div>
       <div className="grid grid-2 gap-md">
         <div className="form-group">
           <label className="form-label">Contact Person</label>
-          <input className="form-control" placeholder="John Doe" required />
+          <input name="contact_name" className="form-control" placeholder="John Doe" required />
         </div>
         <div className="form-group">
           <label className="form-label">Business Email</label>
-          <input type="email" className="form-control" placeholder="doe@company.com" required />
+          <input name="email" type="email" className="form-control" placeholder="doe@company.com" required />
         </div>
       </div>
       <div className="form-group">
         <label className="form-label">Message</label>
-        <textarea className="form-textarea" placeholder="Describe your freight routing or customs inquiry…" required />
+        <textarea name="message" className="form-textarea" placeholder="Describe your freight routing or customs inquiry…" required />
       </div>
-      <button className="btn btn-primary" type="submit" style={{ width: "100%", borderRadius: "var(--radius-md)" }}>
-        Send Inquiry →
+      {error && (
+        <p style={{ color: "var(--color-danger, #d9534f)", fontSize: "var(--font-size-sm)", marginBottom: "var(--space-sm)" }}>{error}</p>
+      )}
+      <button className="btn btn-primary" type="submit" disabled={submitting} style={{ width: "100%", borderRadius: "var(--radius-md)" }}>
+        {submitting ? "Sending…" : "Send Inquiry →"}
       </button>
     </form>
   );

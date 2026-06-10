@@ -7,6 +7,7 @@ import "@/styles/mobile.css";
 import TopBar from "@/components/TopBar";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
+import ScrollFx from "@/components/ScrollFx";
 
 export const metadata: Metadata = {
   title: "Sky Bridge Global — Connecting Supply Chains, Delivering Excellence",
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <ScrollFx />
         <TopBar />
         <SiteHeader />
         {children}

@@ -3,6 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
 import { getSupabaseBrowserClient, isSupabaseConfigured } from "@/lib/supabase/client";
+import TrackingRouteMap from "@/components/TrackingRouteMap";
 
 type ShipmentEvent = {
   title: string;
@@ -27,6 +28,14 @@ type Shipment = {
 };
 
 const DEMO = ["SBG-102948-US", "SBG-584732-EU", "SBG-778899-EU"];
+
+function routeProgress(shipment: Shipment): number {
+  if (shipment.status_class === "success") return 100;
+  const total = shipment.events.length;
+  if (total === 0) return 50;
+  const completed = shipment.events.filter((e) => e.status !== "active").length;
+  return Math.round((completed / total) * 100);
+}
 
 function fmt(ts: string | null) {
   if (!ts) return "";
@@ -129,6 +138,15 @@ export default function TrackingClient() {
             <span className={`badge badge-${result.status_class === "success" ? "success" : result.status_class === "warning" ? "warning" : "primary"}`}>
               {result.status}
             </span>
+          </div>
+
+          <div style={{ marginTop: 20 }}>
+            <TrackingRouteMap
+              origin={result.origin}
+              destination={result.destination}
+              currentLocation={result.current_location}
+              progress={routeProgress(result)}
+            />
           </div>
 
           <div className="grid grid-2 gap-md" style={{ marginTop: 16 }}>

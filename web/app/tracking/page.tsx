@@ -2,7 +2,9 @@ import { Suspense } from "react";
 import TrackingClient from "@/components/TrackingClient";
 
 export const metadata = {
-  title: "Track Your Shipment — Sky Bridge Global",
+  title: "Track Your Shipment",
+  description:
+    "Enter your Sky Bridge Global tracking number to get real-time cargo location, customs clearance status, and estimated delivery for your air, sea or road freight shipment.",
 };
 
 export default function TrackingPage() {

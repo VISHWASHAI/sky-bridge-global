@@ -1,6 +1,10 @@
 import ContactForm from "@/components/ContactForm";
 
-export const metadata = { title: "Contact — Sky Bridge Global" };
+export const metadata = {
+  title: "Contact Us — Get a Freight Quote",
+  description:
+    "Contact Sky Bridge Global in Robertsonpet, Kolar, Karnataka for air, sea and road freight quotes, customs clearance enquiries, and warehousing support. We respond within one business day.",
+};
 
 export default function ContactPage() {
   return (

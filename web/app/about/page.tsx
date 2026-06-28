@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export const metadata = { title: "About — Sky Bridge Global" };
+export const metadata = {
+  title: "About Us — Freight Forwarding Company in Kolar, Karnataka",
+  description:
+    "Founded in 2001 by Arivazhagan K, Sky Bridge Global is a freight and customs brokerage company headquartered in Robertsonpet, Kolar, Karnataka, serving 150+ countries with 99.9% dispatch reliability.",
+};
 
 const MILESTONES = [
   { year: "2001", title: "Company Foundation", accent: true, desc: "Established by Arivazhagan K as a regional freight and customs brokerage firm in Robertsonpet, Kolar, Karnataka, India — coordinating compliance filings and duty clearances for local and regional importers." },

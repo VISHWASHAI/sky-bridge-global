@@ -1,7 +1,11 @@
 import Link from "next/link";
 import PinChecker from "@/components/PinChecker";
 
-export const metadata = { title: "Services — Sky Bridge Global" };
+export const metadata = {
+  title: "Air, Sea & Road Freight Services",
+  description:
+    "Air freight charters, FCL/LCL ocean cargo, GPS-tracked road freight, bonded warehousing and customs brokerage — Sky Bridge Global's freight forwarding services from Kolar, Karnataka to 150+ countries.",
+};
 
 const QUADRANTS = [
   { img: "/images/services_air.png", title: "Air Operations", desc: "Continuous high-priority charter slots and customs gate approvals." },

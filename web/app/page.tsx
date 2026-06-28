@@ -38,15 +38,16 @@ export default function HomePage() {
       >
         <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: 160, paddingBottom: 80 }}>
           <div className="hero-content" style={{ maxWidth: 720 }}>
-            <span className="hero-tag">✈&nbsp; Your Gateway Across Land, Air &amp; Ocean</span>
+            <span className="hero-tag">✈&nbsp; Air, Sea &amp; Road Freight Forwarding — Based in Kolar, Karnataka</span>
             <h1 className="hero-title" style={{ margin: "20px 0 16px" }}>
-              Connecting <span>Global Trade</span>
+              Your Cargo, <span>Delivered On Time</span>
               <br />
-              Without Boundaries
+              Anywhere in the World
             </h1>
             <p className="hero-subtitle" style={{ fontSize: "1.125rem", lineHeight: 1.75, maxWidth: 580, color: "rgba(255,255,255,0.7)" }}>
-              Resilient supply chains, smart border compliance, and express cargo
-              routes across 150+ countries — all in one platform.
+              Sky Bridge Global handles air freight charters, FCL/LCL ocean cargo,
+              road freight and customs clearance for Indian businesses shipping to
+              150+ countries — with live tracking from pickup to delivery.
             </p>
 
             <HeroSearch />

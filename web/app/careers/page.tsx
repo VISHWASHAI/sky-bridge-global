@@ -1,6 +1,10 @@
 import Link from "next/link";
 
-export const metadata = { title: "Careers — Sky Bridge Global" };
+export const metadata = {
+  title: "Careers — Join Our Logistics Team",
+  description:
+    "Explore open roles at Sky Bridge Global across supply chain analysis, customs compliance, and freight sales — international offices, competitive pay, global mobility benefits.",
+};
 
 const JOBS = [
   {

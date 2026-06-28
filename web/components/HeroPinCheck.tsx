@@ -14,7 +14,7 @@ export default function HeroPinCheck() {
   }
 
   return (
-    <form className="animate-fade-up hero-track-wrap" onSubmit={onSubmit} style={{ margin: "0 0 28px", width: "100%", maxWidth: 520 }}>
+    <form className="animate-fade-up hero-track-wrap" onSubmit={onSubmit} style={{ margin: "28px 0", width: "100%", maxWidth: 520 }}>
       <div className="hero-track-bar" style={{ display: "flex", alignItems: "center", background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.14)", borderRadius: 50, padding: "6px 6px 6px 20px", backdropFilter: "blur(12px)", gap: 8 }}>
         <svg width="16" height="16" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="2" viewBox="0 0 24 24" style={{ flexShrink: 0 }}><path d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z" /><circle cx="12" cy="9" r="2.5" /></svg>
         <input

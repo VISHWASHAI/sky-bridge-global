@@ -1,5 +1,4 @@
 import Link from "next/link";
-import HeroSearch from "@/components/HeroSearch";
 import HeroPinCheck from "@/components/HeroPinCheck";
 import JourneyPipeline from "@/components/JourneyPipeline";
 import Testimonials from "@/components/Testimonials";
@@ -51,7 +50,6 @@ export default function HomePage() {
               150+ countries — with live tracking from pickup to delivery.
             </p>
 
-            <HeroSearch />
             <HeroPinCheck />
 
             <div className="hero-btns">

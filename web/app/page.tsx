@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroSearch from "@/components/HeroSearch";
+import HeroPinCheck from "@/components/HeroPinCheck";
 import JourneyPipeline from "@/components/JourneyPipeline";
 import Testimonials from "@/components/Testimonials";
 
@@ -51,6 +52,7 @@ export default function HomePage() {
             </p>
 
             <HeroSearch />
+            <HeroPinCheck />
 
             <div className="hero-btns">
               <Link href="/contact" className="btn btn-primary" style={{ padding: "14px 36px", fontSize: "1rem", fontWeight: 700, borderRadius: 50, boxShadow: "0 0 28px rgba(66,149,232,0.5)" }}>

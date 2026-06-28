@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import PinChecker from "@/components/PinChecker";
 
 export const metadata = {
@@ -189,14 +190,16 @@ export default function ServicesPage() {
       </div>
 
       {/* ── DARK PIN-CODE COVERAGE SECTION (live Supabase) ──────────────── */}
-      <div style={{ background: "linear-gradient(160deg,#060c18 0%,#0a1322 100%)", marginBottom: "var(--space-3xl)" }}>
+      <div id="pin-check" style={{ background: "linear-gradient(160deg,#060c18 0%,#0a1322 100%)", marginBottom: "var(--space-3xl)" }}>
         <div className="container" style={{ paddingTop: 56, paddingBottom: 56 }}>
           <span className="section-label" style={{ color: "#4295e8", borderColor: "#4295e8" }}>Coverage Network</span>
           <h2 style={{ fontFamily: "var(--font-header)", fontSize: "clamp(1.8rem,3vw,2.4rem)", fontWeight: 800, color: "#fff", margin: "12px 0 10px", letterSpacing: "-0.02em" }}>PIN Code Service Checker</h2>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, maxWidth: 520, lineHeight: 1.75, marginBottom: 32 }}>
             Instantly verify freight coverage, identify your nearest hub, and get estimated transit times for any Indian PIN code.
           </p>
-          <PinChecker />
+          <Suspense fallback={null}>
+            <PinChecker />
+          </Suspense>
         </div>
       </div>
     </main>

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useState } from "react";
 import { getSupabaseBrowserClient, isSupabaseConfigured } from "@/lib/supabase/client";
 
 type Area = {
@@ -17,13 +18,14 @@ type Area = {
 const SAMPLES = ["563113", "560001", "600001", "400001", "110001"];
 
 export default function PinChecker() {
+  const params = useSearchParams();
   const [pin, setPin] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<Area | null>(null);
   const [notFound, setNotFound] = useState(false);
 
-  async function check(raw: string) {
+  const check = useCallback(async (raw: string) => {
     const code = raw.trim();
     setResult(null);
     setError(null);
@@ -56,7 +58,15 @@ export default function PinChecker() {
       return;
     }
     setResult(data as Area);
-  }
+  }, []);
+
+  useEffect(() => {
+    const p = params.get("pin");
+    if (p) {
+      setPin(p);
+      check(p);
+    }
+  }, [params, check]);
 
   return (
     <div className="card" style={{ maxWidth: 640, margin: "0 auto", textAlign: "left", boxShadow: "var(--shadow-premium)" }}>

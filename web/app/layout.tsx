@@ -55,7 +55,7 @@ const ORG_JSON_LD = {
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo_badge_circle.png`,
   email: "info@skybridgeglobal.com",
-  telephone: "+91-98765-43210",
+  telephone: "+91-95919-36070",
   address: {
     "@type": "PostalAddress",
     streetAddress: "No. 261, BM Road, Near Industrial Estate, Andersonpet, Robertsonpet",

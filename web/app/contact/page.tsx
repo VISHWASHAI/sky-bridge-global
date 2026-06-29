@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 const ADDRESS_QUERY = "No. 261, BM Road, Near Industrial Estate, Andersonpet, Robertsonpet, Kolar, Karnataka 563113";
-const WHATSAPP_NUMBER = "919876543210"; // update once the real business number is confirmed
+const WHATSAPP_NUMBER = "919591936070";
 
 export default function ContactPage() {
   return (
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 32 }}>
             <ContactInfo title="Robertsonpet, Kolar — Karnataka, India" lines={["No. 261, BM Road, Near Industrial Estate", "Andersonpet, Robertsonpet", "Kolar — 563113, Karnataka"]} />
             <ContactInfo title="Email Us" lines={["info@skybridgeglobal.com"]} />
-            <ContactInfo title="Call Us" lines={["+91 98765 43210"]} />
+            <ContactInfo title="Call Us" lines={["+91 95919 36070"]} />
             <ContactInfo title="Business Hours" lines={["Mon – Sat: 9:30 AM – 6:30 PM IST", "Sunday: Closed"]} />
           </div>
 

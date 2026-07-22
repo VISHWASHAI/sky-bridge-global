@@ -73,7 +73,7 @@ export default function ServicesPage() {
           <div className="section-header">
             <span className="section-label">Logistics Solutions</span>
             <h2 className="section-title">Freight Routing Capabilities</h2>
-            <p className="section-desc">We offer a robust portfolio of shipping, warehousing, and trade compliance services.</p>
+            <p className="section-desc">Reliable, cost-effective logistics and supply chain solutions — air freight, sea cargo, road transport, warehousing, and customs brokerage — for businesses of all sizes shipping across domestic and international markets.</p>
           </div>
 
           {/* ── DARK MULTI-MODAL QUADRANT BANNER ─────────────────────────── */}
@@ -102,7 +102,7 @@ export default function ServicesPage() {
           {/* ── MAGAZINE GRID ─────────────────────────────────────────────── */}
           <div className="grid-2 mag-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: "var(--space-2xl)" }}>
             <Link href="/contact" className="mag-card" style={{ position: "relative", borderRadius: 16, overflow: "hidden", cursor: "pointer", minHeight: 420, background: "#0a1322", display: "block" }}>
-              <img src="/images/services_air.png" alt="Air Freight" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
+              <img src="/images/services_air.png" alt="Priority air freight charter aircraft on the tarmac" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(6,12,24,0.92) 0%, rgba(6,12,24,0.3) 60%, transparent 100%)" }} />
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 28 }}>
                 <span style={{ display: "inline-block", background: "var(--accent-orange)", color: "#fff", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", padding: "4px 10px", borderRadius: 20, marginBottom: 10 }}>Air Freight</span>
@@ -119,7 +119,7 @@ export default function ServicesPage() {
                 { img: "/images/services_warehouse.png", tag: "Warehousing", title: "Secure Distribution Hubs", cta: "View Facilities →" },
               ].map((m, i) => (
                 <Link key={i} href="/contact" className="mag-card" style={{ position: "relative", borderRadius: 16, overflow: "hidden", cursor: "pointer", flex: 1, minHeight: 120, background: "#0a1322", display: "block" }}>
-                  <img src={m.img} alt={m.tag} style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
+                  <img src={m.img} alt={m.title} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
                   <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to right, rgba(6,12,24,0.88) 0%, rgba(6,12,24,0.3) 100%)" }} />
                   <div style={{ position: "absolute", top: "50%", left: 24, transform: "translateY(-50%)" }}>
                     <span style={{ display: "block", color: "rgba(255,255,255,0.5)", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", marginBottom: 4 }}>{m.tag}</span>

@@ -65,7 +65,7 @@ export default function AboutPage() {
       <section className="container" style={{ marginBottom: "var(--space-3xl)" }}>
         <div className="grid grid-2 gap-xl reveal-fade-up" style={{ alignItems: "center", marginBottom: "var(--space-2xl)", textAlign: "left" }}>
           <div style={{ borderRadius: "var(--radius-xl)", overflow: "hidden", height: 320, boxShadow: "var(--shadow-md)" }}>
-            <img src="/images/about_team.png" alt="Logistics Team Collaboration" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <img src="/images/about_team.png" alt="Logistics Team Collaboration" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
           <div>
             <span className="badge badge-warning" style={{ marginBottom: "var(--space-xs)" }}>Operational Excellence</span>
@@ -87,7 +87,7 @@ export default function AboutPage() {
             <Link href="/services" className="btn btn-outline btn-sm">Explore Hub Services</Link>
           </div>
           <div style={{ borderRadius: "var(--radius-xl)", overflow: "hidden", height: 320, boxShadow: "var(--shadow-md)" }}>
-            <img src="/images/about_warehouse.png" alt="Warehouse Operations" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <img src="/images/about_warehouse.png" alt="Warehouse Operations" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
         </div>
       </section>

@@ -116,7 +116,7 @@ export default function HomePage() {
             <span className="badge badge-primary" style={{ marginBottom: "var(--space-xs)" }}>Global Network</span>
             <h2 className="heading-2" style={{ color: "var(--color-primary-navy)", marginBottom: "var(--space-md)" }}>Serving Businesses Across Continents</h2>
             <p style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", lineHeight: 1.7, marginBottom: "var(--space-md)" }}>
-              Sky Bridge Global delivers integrated cargo services bridging major trade channels. From single packages to multi-pallet charters and container shipments, we leverage state of the art warehousing systems, smart compliance audits, and route optimization metrics to serve enterprise logistics teams.
+              From Kolar, Karnataka, Sky Bridge Global delivers integrated logistics and supply chain solutions across domestic and international trade routes. Whether it&apos;s air freight, sea cargo, road transport, or customs brokerage, we combine modern warehousing, smart compliance audits, and route optimization to give businesses of all sizes reliable, efficient, and cost-effective transportation.
             </p>
             <Link href="/about" className="btn btn-outline">Our Network Story</Link>
           </div>
@@ -180,7 +180,7 @@ export default function HomePage() {
         <div className="services-horizontal-track reveal-stagger-container" style={{ textAlign: "left" }}>
           {SERVICE_CARDS.map((c, i) => (
             <div key={i} className="card card-hover service-card reveal-stagger-item" style={{ padding: 0, overflow: "hidden" }}>
-              <img src={c.img} alt={c.title} style={{ width: "100%", height: 130, objectFit: "cover", display: "block", filter: c.filter }} />
+              <img src={c.img} alt={c.title} loading="lazy" decoding="async" style={{ width: "100%", height: 130, objectFit: "cover", display: "block", filter: c.filter }} />
               <div style={{ padding: "var(--space-md)" }}>
                 <h3 className="service-title">{c.title}</h3>
                 <p className="service-desc">{c.desc}</p>

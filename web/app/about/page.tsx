@@ -42,7 +42,7 @@ export default function AboutPage() {
         <span className="badge badge-primary" style={{ marginBottom: "var(--space-xs)" }}>Corporate Profile</span>
         <h2 className="heading-2" style={{ color: "var(--color-primary-navy)", marginBottom: "var(--space-sm)" }}>About Sky Bridge Global</h2>
         <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, fontSize: "var(--font-size-sm)", marginBottom: "var(--space-md)" }}>
-          Sky Bridge Global, founded by Arivazhagan K and headquartered in Robertsonpet, Kolar, Karnataka, is a registered freight and logistics company specialising in multi-modal cargo solutions. We handle air freight, sea cargo, road transport, warehousing, and customs brokerage — connecting Indian businesses to domestic and international trade corridors with precision and compliance.
+          Sky Bridge Global, founded by Arivazhagan K and headquartered in Robertsonpet, Kolar, Karnataka, is a professional logistics and supply chain solutions company dedicated to reliable, efficient, and cost-effective transportation. We provide integrated logistics services that simplify supply chain operations for businesses of all sizes — handling air freight, sea cargo, road transport, warehousing, and customs brokerage across domestic and international markets. Through customized logistics solutions, modern practices, and experienced professionals, we deliver safe, timely, and high-quality services while building long-term business relationships rooted in customer satisfaction and operational excellence.
         </p>
 
         <div className="grid grid-2 gap-lg" style={{ marginTop: "var(--space-xl)" }}>

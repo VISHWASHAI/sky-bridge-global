@@ -1,4 +1,5 @@
 import crypto from "crypto";
+import { cookies } from "next/headers";
 
 /**
  * Minimal password gate for the /admin area. Not a full user-auth system —
@@ -30,4 +31,11 @@ export function verifyPassword(input: string): boolean {
   const b = Buffer.from(password);
   if (a.length !== b.length) return false;
   return crypto.timingSafeEqual(a, b);
+}
+
+/** True when the current request carries a valid admin session cookie. */
+export function isAdminAuthed(): boolean {
+  const token = sessionToken();
+  if (!token) return false;
+  return cookies().get(ADMIN_COOKIE)?.value === token;
 }

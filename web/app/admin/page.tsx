@@ -1,7 +1,7 @@
-import { cookies } from "next/headers";
-import { ADMIN_COOKIE, sessionToken, isAdminAuthConfigured } from "@/lib/admin-auth";
+import { isAdminAuthed, isAdminAuthConfigured } from "@/lib/admin-auth";
 import { getSupabaseAdminClient, isAdminConfigured } from "@/lib/supabase/admin";
-import { login, logout } from "./actions";
+import { login } from "./actions";
+import AdminNav from "@/components/admin/AdminNav";
 
 export const dynamic = "force-dynamic";
 
@@ -18,12 +18,6 @@ type Enquiry = {
   message: string;
   created_at: string;
 };
-
-function isAuthed(): boolean {
-  const token = sessionToken();
-  if (!token) return false;
-  return cookies().get(ADMIN_COOKIE)?.value === token;
-}
 
 function formatWhen(iso: string): string {
   try {
@@ -73,7 +67,7 @@ export default async function AdminPage({
   }
 
   // ── Login gate ────────────────────────────────────────────────────────────
-  if (!isAuthed()) {
+  if (!isAdminAuthed()) {
     return (
       <section style={shell}>
         <div className="container" style={{ maxWidth: 420 }}>
@@ -114,16 +108,12 @@ export default async function AdminPage({
   return (
     <section style={shell}>
       <div className="container">
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12, marginBottom: "var(--space-lg)" }}>
-          <div>
-            <h1 className="heading-2" style={{ color: "var(--color-primary-navy)", marginBottom: 2 }}>Enquiries</h1>
-            <p style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)" }}>
-              {enquiries.length} total · newest first
-            </p>
-          </div>
-          <form action={logout}>
-            <button className="btn btn-outline btn-sm" type="submit">Log out</button>
-          </form>
+        <AdminNav active="enquiries" />
+        <div style={{ marginBottom: "var(--space-lg)" }}>
+          <h1 className="heading-2" style={{ color: "var(--color-primary-navy)", marginBottom: 2 }}>Enquiries</h1>
+          <p style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)" }}>
+            {enquiries.length} total · newest first
+          </p>
         </div>
 
         {error && (

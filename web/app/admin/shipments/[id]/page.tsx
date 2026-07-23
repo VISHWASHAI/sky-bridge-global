@@ -7,11 +7,11 @@ import AdminNav from "@/components/admin/AdminNav";
 import ShipmentFields from "@/components/admin/ShipmentFields";
 import CopyLinkButton from "@/components/admin/CopyLinkButton";
 import { updateShipment, deleteShipment, addEvent, deleteEvent, markDelivered } from "../actions";
+import { SITE_URL } from "@/lib/site";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin — Shipment", robots: { index: false, follow: false } };
 
-const SITE_URL = "https://sky-bridge-global.vercel.app";
 const shell: React.CSSProperties = { paddingTop: 140, paddingBottom: "var(--space-3xl)", minHeight: "70vh" };
 
 function fmt(iso: string | null): string {

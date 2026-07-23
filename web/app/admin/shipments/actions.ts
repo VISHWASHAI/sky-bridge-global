@@ -109,6 +109,35 @@ export async function addEvent(formData: FormData) {
   redirect(`/admin/shipments/${shipment_id}`);
 }
 
+export async function markDelivered(formData: FormData) {
+  if (!isAdminAuthed()) redirect("/admin");
+  const supabase = getSupabaseAdminClient();
+  if (!supabase) redirect("/admin");
+
+  const id = String(formData.get("id") ?? "");
+  const { data: s } = await supabase.from("shipments").select("destination").eq("id", id).single();
+  const destination = (s as { destination: string | null } | null)?.destination ?? null;
+
+  await supabase
+    .from("shipments")
+    .update({ status: "Delivered", status_class: "success", current_location: destination })
+    .eq("id", id);
+
+  // Demote any existing "current" step, then add Delivered as the current one.
+  await supabase.from("shipment_events").update({ status: "completed" }).eq("shipment_id", id).eq("status", "active");
+  await supabase.from("shipment_events").insert({
+    shipment_id: id,
+    title: "Delivered",
+    location: destination,
+    description: "Shipment delivered successfully.",
+    status: "active",
+    event_time: new Date().toISOString(),
+  });
+
+  revalidatePath(`/admin/shipments/${id}`);
+  redirect(`/admin/shipments/${id}?saved=1`);
+}
+
 export async function deleteEvent(formData: FormData) {
   if (!isAdminAuthed()) redirect("/admin");
   const id = String(formData.get("id") ?? "");

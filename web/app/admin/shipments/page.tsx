@@ -10,14 +10,21 @@ export const metadata = { title: "Admin — Shipments", robots: { index: false, 
 
 const shell: React.CSSProperties = { paddingTop: 140, paddingBottom: "var(--space-3xl)", minHeight: "70vh" };
 
-export default async function ShipmentsPage() {
+export default async function ShipmentsPage({ searchParams }: { searchParams: { q?: string } }) {
   if (!isAdminAuthConfigured || !isAdminConfigured || !isAdminAuthed()) redirect("/admin");
 
+  // Strip characters that would break PostgREST's or() filter syntax.
+  const q = (searchParams?.q ?? "").replace(/[,()]/g, " ").trim();
+
   const supabase = getSupabaseAdminClient()!;
-  const { data, error } = await supabase
+  let query = supabase
     .from("shipments")
     .select("id, tracking_no, status, status_class, origin, destination, created_at")
     .order("created_at", { ascending: false });
+  if (q) {
+    query = query.or(`tracking_no.ilike.%${q}%,origin.ilike.%${q}%,destination.ilike.%${q}%`);
+  }
+  const { data, error } = await query;
 
   const shipments = (data ?? []) as ShipmentRow[];
 
@@ -34,6 +41,12 @@ export default async function ShipmentsPage() {
           <Link href="/admin/shipments/new" className="btn btn-primary btn-sm" style={{ borderRadius: "var(--radius-md)" }}>+ New shipment</Link>
         </div>
 
+        <form method="get" style={{ display: "flex", gap: 8, marginBottom: "var(--space-md)", maxWidth: 420 }}>
+          <input name="q" defaultValue={q} className="form-control" placeholder="Search tracking no., origin, destination…" style={{ flex: 1 }} />
+          <button className="btn btn-outline btn-sm" type="submit">Search</button>
+          {q && <Link href="/admin/shipments" className="btn btn-outline btn-sm">Clear</Link>}
+        </form>
+
         {error && (
           <div className="card" style={{ borderLeft: "5px solid var(--color-danger, #d9534f)", marginBottom: "var(--space-md)" }}>
             <p style={{ color: "var(--color-danger, #d9534f)" }}>Could not load shipments: {error.message}</p>
@@ -42,7 +55,9 @@ export default async function ShipmentsPage() {
 
         {shipments.length === 0 && !error ? (
           <div className="card">
-            <p style={{ color: "var(--color-text-muted)" }}>No shipments yet. Click “New shipment” to add your first one.</p>
+            <p style={{ color: "var(--color-text-muted)" }}>
+              {q ? `No shipments match “${q}”.` : "No shipments yet. Click “New shipment” to add your first one."}
+            </p>
           </div>
         ) : (
           <div className="card" style={{ padding: 0, overflowX: "auto" }}>

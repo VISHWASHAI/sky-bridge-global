@@ -27,8 +27,6 @@ type Shipment = {
   events: ShipmentEvent[];
 };
 
-const DEMO = ["SBG-102948-US", "SBG-584732-EU", "SBG-778899-EU"];
-
 function routeProgress(shipment: Shipment): number {
   if (shipment.status_class === "success") return 100;
   const total = shipment.events.length;
@@ -109,16 +107,7 @@ export default function TrackingClient() {
           </button>
         </form>
         <div style={{ marginTop: 14, fontSize: "var(--font-size-xs)", color: "var(--color-text-muted)" }}>
-          Demo reference keys:{" "}
-          {DEMO.map((d, i) => (
-            <button
-              key={d}
-              onClick={() => { setCode(d); lookup(d); }}
-              style={{ background: "var(--sky-100)", color: "var(--color-primary-blue)", border: "none", borderRadius: 6, padding: "3px 8px", marginRight: 6, cursor: "pointer", fontWeight: 600 }}
-            >
-              {d}
-            </button>
-          ))}
+          Enter the tracking number from your shipment confirmation to see live status and location.
         </div>
       </div>
 

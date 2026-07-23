@@ -5,7 +5,8 @@ import { getSupabaseAdminClient, isAdminConfigured } from "@/lib/supabase/admin"
 import { EVENT_STATUSES, type ShipmentRow, type ShipmentEventRow } from "@/lib/shipments";
 import AdminNav from "@/components/admin/AdminNav";
 import ShipmentFields from "@/components/admin/ShipmentFields";
-import { updateShipment, deleteShipment, addEvent, deleteEvent } from "../actions";
+import CopyLinkButton from "@/components/admin/CopyLinkButton";
+import { updateShipment, deleteShipment, addEvent, deleteEvent, markDelivered } from "../actions";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin — Shipment", robots: { index: false, follow: false } };
@@ -69,6 +70,17 @@ export default async function ShipmentDetailPage({
             Customer link:{" "}
             <a href={publicLink} target="_blank" rel="noreferrer" style={{ color: "var(--color-primary-blue, #2563eb)" }}>{publicLink}</a>
           </p>
+          <div style={{ display: "flex", gap: 10, flexWrap: "wrap", marginTop: 10 }}>
+            <CopyLinkButton text={publicLink} label="Copy customer link" />
+            {s.status_class !== "success" && (
+              <form action={markDelivered}>
+                <input type="hidden" name="id" value={s.id} />
+                <button className="btn btn-outline btn-sm" type="submit" style={{ color: "var(--color-success, #16a34a)", borderColor: "var(--color-success, #16a34a)" }}>
+                  ✓ Mark delivered
+                </button>
+              </form>
+            )}
+          </div>
         </div>
 
         {searchParams?.saved && (

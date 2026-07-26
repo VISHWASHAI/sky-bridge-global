@@ -6,7 +6,7 @@ export default function SiteFooter() {
       <div className="container footer-grid" style={{ textAlign: "left" }}>
         <div className="footer-info">
           <img
-            src="/images/logo_badge_circle.png"
+            src="/images/logo_badge_circle.webp"
             alt="Sky Bridge Global"
             style={{ height: 64, width: 64, objectFit: "cover", borderRadius: "50%", background: "#fff", marginBottom: 24 }}
           />

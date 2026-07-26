@@ -41,7 +41,7 @@ export default function SiteHeader() {
         <div className="header-container">
           <Link href="/" className="header-logo" onClick={() => setMenuOpen(false)} style={{ cursor: "pointer" }}>
             <img
-              src="/images/logo_badge_circle.png"
+              src="/images/logo_badge_circle.webp"
               alt="Sky Bridge Global"
               style={{ height: 72, width: 72, objectFit: "cover", borderRadius: "50%", background: "#ffffff", border: "2px solid rgba(66, 149, 232, 0.45)", boxShadow: "0 2px 14px rgba(66, 149, 232, 0.35)" }}
             />

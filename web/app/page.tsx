@@ -11,11 +11,11 @@ const TRUST_STATS = [
 ];
 
 const SERVICE_CARDS = [
-  { img: "/images/category_air.png", title: "Air Freight Charter", desc: "Priority cargo scheduling and custom customs clearance on prime flight corridors." },
-  { img: "/images/category_ocean.png", title: "Sea Cargo Liners", desc: "Weekly ocean container space bookings for FCL & LCL cargo routes." },
-  { img: "/images/category_road.png", title: "Land Freight Networks", desc: "GPS-enabled domestic trucking fleets and border gateway checks." },
-  { img: "/images/services_warehouse.png", title: "Warehousing & Hubs", desc: "Distributed climate-controlled inventory facilities with cross-docking hubs." },
-  { img: "/images/services_air.png", title: "Customs Brokerage", desc: "Automated compliance audit filings, bonded clearance, and tariff assessments.", filter: "hue-rotate(200deg) brightness(0.85)" },
+  { img: "/images/category_air.webp", title: "Air Freight Charter", desc: "Priority cargo scheduling and custom customs clearance on prime flight corridors." },
+  { img: "/images/category_ocean.webp", title: "Sea Cargo Liners", desc: "Weekly ocean container space bookings for FCL & LCL cargo routes." },
+  { img: "/images/category_road.webp", title: "Land Freight Networks", desc: "GPS-enabled domestic trucking fleets and border gateway checks." },
+  { img: "/images/services_warehouse.webp", title: "Warehousing & Hubs", desc: "Distributed climate-controlled inventory facilities with cross-docking hubs." },
+  { img: "/images/services_air.webp", title: "Customs Brokerage", desc: "Automated compliance audit filings, bonded clearance, and tariff assessments.", filter: "hue-rotate(200deg) brightness(0.85)" },
 ];
 
 const PARTNER_LOGOS = ["MAERSK LINE", "FEDEX SLOT", "DHL EXPRESS", "UPS SYSTEMS", "IATA MEMBER", "FIATA COMPL"];
@@ -34,7 +34,7 @@ export default function HomePage() {
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section
         className="hero-section"
-        style={{ background: "linear-gradient(160deg, rgba(6,12,24,0.88) 0%, rgba(10,19,34,0.82) 60%, rgba(15,28,48,0.70) 100%), url('/images/hero_bg.png') no-repeat center center / cover" }}
+        style={{ background: "linear-gradient(160deg, rgba(6,12,24,0.88) 0%, rgba(10,19,34,0.82) 60%, rgba(15,28,48,0.70) 100%), url('/images/hero_bg.webp') no-repeat center center / cover" }}
       >
         <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: 160, paddingBottom: 80 }}>
           <div className="hero-content" style={{ maxWidth: 720 }}>
@@ -193,7 +193,7 @@ export default function HomePage() {
 
       {/* ── PORT IMAGE DIVIDER ───────────────────────────────────────────── */}
       <div className="container" style={{ marginBottom: "var(--space-3xl)" }}>
-        <div style={{ width: "100%", height: 180, background: "url('/images/divider_port.png') center/cover no-repeat", position: "relative", borderRadius: "var(--radius-xl)", overflow: "hidden" }}>
+        <div style={{ width: "100%", height: 180, background: "url('/images/divider_port.webp') center/cover no-repeat", position: "relative", borderRadius: "var(--radius-xl)", overflow: "hidden" }}>
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,19,34,0.72) 0%, rgba(10,19,34,0.2) 50%, rgba(10,19,34,0.72) 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
             <p style={{ color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-header)", fontSize: "1.1rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", textAlign: "center" }}>
               Precision Logistics · Every Route · Every Cargo Type

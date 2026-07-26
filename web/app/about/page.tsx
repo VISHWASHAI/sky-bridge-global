@@ -25,7 +25,7 @@ export default function AboutPage() {
     <main>
       {/* ── HERO BAND ─────────────────────────────────────────────────────── */}
       <div style={{ background: "linear-gradient(160deg,#060c18 0%,#0d1627 50%,#0a1322 100%)", position: "relative", overflow: "hidden" }}>
-        <img src="/images/about_banner.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.18 }} />
+        <img src="/images/about_banner.webp" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.18 }} />
         <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: 140, paddingBottom: 64 }}>
           <span className="section-label" style={{ color: "#4295e8", borderColor: "#4295e8" }}>Corporate Profile</span>
           <h1 style={{ fontFamily: "var(--font-header)", fontSize: "clamp(2rem,4vw,3.2rem)", fontWeight: 800, color: "#fff", margin: "12px 0 16px", lineHeight: 1.15, letterSpacing: "-0.02em" }}>
@@ -65,7 +65,7 @@ export default function AboutPage() {
       <section className="container" style={{ marginBottom: "var(--space-3xl)" }}>
         <div className="grid grid-2 gap-xl reveal-fade-up" style={{ alignItems: "center", marginBottom: "var(--space-2xl)", textAlign: "left" }}>
           <div style={{ borderRadius: "var(--radius-xl)", overflow: "hidden", height: 320, boxShadow: "var(--shadow-md)" }}>
-            <img src="/images/about_team.png" alt="Logistics Team Collaboration" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <img src="/images/about_team.webp" alt="Logistics Team Collaboration" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
           <div>
             <span className="badge badge-warning" style={{ marginBottom: "var(--space-xs)" }}>Operational Excellence</span>
@@ -87,14 +87,14 @@ export default function AboutPage() {
             <Link href="/services" className="btn btn-outline btn-sm">Explore Hub Services</Link>
           </div>
           <div style={{ borderRadius: "var(--radius-xl)", overflow: "hidden", height: 320, boxShadow: "var(--shadow-md)" }}>
-            <img src="/images/about_warehouse.png" alt="Warehouse Operations" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+            <img src="/images/about_warehouse.webp" alt="Warehouse Operations" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
           </div>
         </div>
       </section>
 
       {/* ── ENTERPRISE NETWORK PRESENCE (dark card + counters) ──────────── */}
       <section className="container reveal-fade-up" style={{ marginBottom: "var(--space-3xl)" }}>
-        <div className="card" style={{ background: "linear-gradient(180deg, rgba(15, 28, 48, 0.8) 0%, rgba(9, 16, 28, 0.9) 100%), url('/images/about_banner.png') no-repeat center center", backgroundSize: "cover", color: "white", border: "none", padding: "var(--space-2xl)", borderRadius: "var(--radius-xl)", position: "relative", overflow: "hidden" }}>
+        <div className="card" style={{ background: "linear-gradient(180deg, rgba(15, 28, 48, 0.8) 0%, rgba(9, 16, 28, 0.9) 100%), url('/images/about_banner.webp') no-repeat center center", backgroundSize: "cover", color: "white", border: "none", padding: "var(--space-2xl)", borderRadius: "var(--radius-xl)", position: "relative", overflow: "hidden" }}>
           <div style={{ position: "relative", zIndex: 5, textAlign: "center", marginBottom: "var(--space-xl)" }}>
             <span className="badge" style={{ background: "rgba(255,255,255,0.1)", color: "white", marginBottom: "var(--space-xs)" }}>Enterprise Network Presence</span>
             <h2 className="heading-2" style={{ color: "white", fontFamily: "var(--font-header)", marginBottom: "var(--space-2xs)" }}>Building Bridges Across Global Trade</h2>
@@ -121,7 +121,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── PORT PARALLAX DIVIDER ────────────────────────────────────────── */}
-      <div className="parallax-divider" style={{ backgroundImage: "url('/images/divider_port.png')" }} />
+      <div className="parallax-divider" style={{ backgroundImage: "url('/images/divider_port.webp')" }} />
 
       {/* ── EXECUTIVE COMMITTEE ──────────────────────────────────────────── */}
       <section className="container reveal-fade-up" style={{ marginBottom: "var(--space-3xl)" }}>

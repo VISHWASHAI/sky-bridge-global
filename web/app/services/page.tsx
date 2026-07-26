@@ -9,10 +9,10 @@ export const metadata = {
 };
 
 const QUADRANTS = [
-  { img: "/images/services_air.png", title: "Air Operations", desc: "Continuous high-priority charter slots and customs gate approvals." },
-  { img: "/images/services_ocean.png", title: "Ocean Operations", desc: "FCL & LCL container capacity management across primary shipping channels." },
-  { img: "/images/services_road.png", title: "Ground Networks", desc: "GPS dispatch trucking for freight deliveries and local logistics nodes." },
-  { img: "/images/services_warehouse.png", title: "Secure Warehousing", desc: "Climate-regulated depots, inventory audits, and pick-and-pack lines." },
+  { img: "/images/services_air.webp", title: "Air Operations", desc: "Continuous high-priority charter slots and customs gate approvals." },
+  { img: "/images/services_ocean.webp", title: "Ocean Operations", desc: "FCL & LCL container capacity management across primary shipping channels." },
+  { img: "/images/services_road.webp", title: "Ground Networks", desc: "GPS dispatch trucking for freight deliveries and local logistics nodes." },
+  { img: "/images/services_warehouse.webp", title: "Secure Warehousing", desc: "Climate-regulated depots, inventory audits, and pick-and-pack lines." },
 ];
 
 const CHOOSE = [
@@ -26,19 +26,19 @@ const CHOOSE = [
 const CATEGORIES = [
   {
     title: "Air Freight", color: "var(--sky-300)", badge: "Express", badgeBg: "rgba(66, 149, 232, 0.15)",
-    img: "/images/category_air.png",
+    img: "/images/category_air.webp",
     points: ["✓ Staggered carrier slot reserves", "✓ Bonded airport warehouse links", "✓ Real-time ledger transit logs"],
     statLabel: "Av. Transit Time", statValue: "1-3 Business Days",
   },
   {
     title: "Ocean Freight", color: "var(--blue-400)", badge: "High Volume", badgeBg: "rgba(27, 77, 143, 0.2)",
-    img: "/images/category_ocean.png",
+    img: "/images/category_ocean.webp",
     points: ["✓ Weekly full container bookings", "✓ Standard terminal consolidations", "✓ Secure maritime trade lanes"],
     statLabel: "Volume Capacity", statValue: "Infinite / FCL & LCL",
   },
   {
     title: "Road Freight", color: "var(--accent-orange)", badge: "Last Mile", badgeBg: "rgba(244, 180, 0, 0.15)",
-    img: "/images/category_road.png",
+    img: "/images/category_road.webp",
     points: ["✓ Real-time active GPS trackers", "✓ Border control check lanes", "✓ Direct door-to-door dispatch"],
     statLabel: "Regional Tracking", statValue: "Active GPS / SMS",
   },
@@ -46,19 +46,19 @@ const CATEGORIES = [
 
 const PREMIUM_BANNERS = [
   {
-    img: "/images/charter_plane.png", badge: "Premium Charter Service", badgeColor: "var(--sky-200)",
+    img: "/images/charter_plane.webp", badge: "Premium Charter Service", badgeColor: "var(--sky-200)",
     title: "Rapid Air Freight Charter Solutions",
     desc: "Fast, Secure and Reliable Air Cargo Transportation Across International Destinations. Dedicated custom fleet routing for oversized machinery and priority shipments.",
     btn: { label: "Request Charter Quote", cls: "btn btn-accent" },
   },
   {
-    img: "/images/sea_freight_premium.png", badge: "Ocean Consolidation Lines", badgeColor: "var(--blue-400)",
+    img: "/images/sea_freight_premium.webp", badge: "Ocean Consolidation Lines", badgeColor: "var(--blue-400)",
     title: "Global Ocean Freight Network",
     desc: "Resilient transoceanic container links bridging major Asian, European, and American trade centers. Guaranteed container block bookings and automated clearance checks.",
     btn: { label: "Sea Freight Rate Quote", cls: "btn btn-primary" },
   },
   {
-    img: "/images/road_freight_premium.png", badge: "Ground Logistics", badgeColor: "var(--accent-orange)",
+    img: "/images/road_freight_premium.webp", badge: "Ground Logistics", badgeColor: "var(--accent-orange)",
     title: "Connected Highway Freight Fleet",
     desc: "Cross-border shipping linehauls and secure regional deliveries. Automated GPS fleet allocation and electronic logbook integration for continuous transit logs.",
     btn: { label: "Check Ground Coverage", cls: "btn btn-outline-white" },
@@ -102,7 +102,7 @@ export default function ServicesPage() {
           {/* ── MAGAZINE GRID ─────────────────────────────────────────────── */}
           <div className="grid-2 mag-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginBottom: "var(--space-2xl)" }}>
             <Link href="/contact" className="mag-card" style={{ position: "relative", borderRadius: 16, overflow: "hidden", cursor: "pointer", minHeight: 420, background: "#0a1322", display: "block" }}>
-              <img src="/images/services_air.png" alt="Priority air freight charter aircraft on the tarmac" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
+              <img src="/images/services_air.webp" alt="Priority air freight charter aircraft on the tarmac" loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(6,12,24,0.92) 0%, rgba(6,12,24,0.3) 60%, transparent 100%)" }} />
               <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: 28 }}>
                 <span style={{ display: "inline-block", background: "var(--accent-orange)", color: "#fff", fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.08em", padding: "4px 10px", borderRadius: 20, marginBottom: 10 }}>Air Freight</span>
@@ -114,9 +114,9 @@ export default function ServicesPage() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
               {[
-                { img: "/images/services_ocean.png", tag: "Ocean Freight", title: "FCL & LCL Sea Cargo", cta: "Request Ocean Rate →" },
-                { img: "/images/services_road.png", tag: "Road Transport", title: "GPS Fleet Trucking Networks", cta: "Request Road Rate →" },
-                { img: "/images/services_warehouse.png", tag: "Warehousing", title: "Secure Distribution Hubs", cta: "View Facilities →" },
+                { img: "/images/services_ocean.webp", tag: "Ocean Freight", title: "FCL & LCL Sea Cargo", cta: "Request Ocean Rate →" },
+                { img: "/images/services_road.webp", tag: "Road Transport", title: "GPS Fleet Trucking Networks", cta: "Request Road Rate →" },
+                { img: "/images/services_warehouse.webp", tag: "Warehousing", title: "Secure Distribution Hubs", cta: "View Facilities →" },
               ].map((m, i) => (
                 <Link key={i} href="/contact" className="mag-card" style={{ position: "relative", borderRadius: 16, overflow: "hidden", cursor: "pointer", flex: 1, minHeight: 120, background: "#0a1322", display: "block" }}>
                   <img src={m.img} alt={m.title} loading="lazy" decoding="async" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0, transition: "transform 0.5s ease" }} />
@@ -166,10 +166,10 @@ export default function ServicesPage() {
           </div>
 
           {/* ── TRUCKS PARALLAX DIVIDER ──────────────────────────────────── */}
-          <div className="parallax-divider" style={{ backgroundImage: "url('/images/divider_trucks.png')" }} />
+          <div className="parallax-divider" style={{ backgroundImage: "url('/images/divider_trucks.webp')" }} />
 
           {/* ── WHY CHOOSE US ────────────────────────────────────────────── */}
-          <div style={{ marginTop: "var(--space-3xl)", background: "linear-gradient(180deg, rgba(248, 250, 252, 0.92) 0%, rgba(248, 250, 252, 0.92) 100%), url('/images/why_choose_bg.png') no-repeat center center", backgroundSize: "cover", padding: "var(--space-2xl) var(--space-xl)", borderRadius: "var(--radius-xl)", border: "1px solid var(--color-border)", boxShadow: "var(--shadow-sm)" }}>
+          <div style={{ marginTop: "var(--space-3xl)", background: "linear-gradient(180deg, rgba(248, 250, 252, 0.92) 0%, rgba(248, 250, 252, 0.92) 100%), url('/images/why_choose_bg.webp') no-repeat center center", backgroundSize: "cover", padding: "var(--space-2xl) var(--space-xl)", borderRadius: "var(--radius-xl)", border: "1px solid var(--color-border)", boxShadow: "var(--shadow-sm)" }}>
             <div className="section-header" style={{ textAlign: "center" }}>
               <span className="section-label">Why Choose Us</span>
               <h2 className="section-title" style={{ color: "var(--color-primary-navy)" }}>Why Businesses Choose Sky Bridge Global</h2>

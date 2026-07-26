@@ -9,6 +9,21 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollFx from "@/components/ScrollFx";
 import { SITE_URL } from "@/lib/site";
+import { Inter, Outfit } from "next/font/google";
+
+// Self-hosted at build time by next/font — no external Google Fonts request.
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-outfit",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -34,7 +49,7 @@ export const metadata: Metadata = {
     description:
       "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — serving 150+ countries.",
     url: SITE_URL,
-    images: [{ url: "/images/hero_bg.png" }],
+    images: [{ url: "/images/og-cover.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -42,7 +57,7 @@ export const metadata: Metadata = {
     description:
       "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — serving 150+ countries.",
   },
-  icons: { icon: "/images/logo_badge_circle.png" },
+  icons: { icon: "/images/logo_badge_circle.webp" },
 };
 
 const ORG_JSON_LD = {
@@ -52,7 +67,7 @@ const ORG_JSON_LD = {
   description:
     "Freight forwarding and customs brokerage company offering air freight, sea cargo, road transport, warehousing and customs clearance.",
   url: SITE_URL,
-  logo: `${SITE_URL}/images/logo_badge_circle.png`,
+  logo: `${SITE_URL}/images/logo_badge_circle.webp`,
   email: "info@skybridgeglobal.com",
   telephone: "+91-95919-36070",
   address: {
@@ -73,7 +88,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body>
         <script
           type="application/ld+json"

@@ -48,7 +48,7 @@ export default function CareersPage() {
     <main>
       {/* ── HERO BAND ─────────────────────────────────────────────────────── */}
       <div style={{ background: "linear-gradient(160deg,#060c18 0%,#0d1627 50%,#0a1322 100%)", position: "relative", overflow: "hidden" }}>
-        <img src="/images/about_team.png" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.14 }} />
+        <img src="/images/about_team.webp" alt="" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", opacity: 0.14 }} />
         <div className="container" style={{ position: "relative", zIndex: 2, paddingTop: 140, paddingBottom: 64, textAlign: "left" }}>
           <span className="section-label" style={{ color: "#4295e8", borderColor: "#4295e8" }}>Join the Team</span>
           <h1 style={{ fontFamily: "var(--font-header)", fontSize: "clamp(2rem,4vw,3.2rem)", fontWeight: 800, color: "#fff", margin: "12px 0 16px", lineHeight: 1.15, letterSpacing: "-0.02em" }}>

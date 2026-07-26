@@ -10,14 +10,8 @@ const MILESTONES = [
   { year: "2001", title: "Company Foundation", accent: true, desc: "Established by Arivazhagan K as a regional freight and customs brokerage firm in Robertsonpet, Kolar, Karnataka, India — coordinating compliance filings and duty clearances for local and regional importers." },
   { year: "2007", title: "First International Air Cargo Charter", accent: false, desc: "Successfully managed our first international air freight charter from Frankfurt to Chicago and opened transit agent offices at major airport corridors worldwide." },
   { year: "2013", title: "Expansion into Global Markets", accent: false, desc: "Expanded operations to serve pan-India freight corridors and launched multi-modal LCL cargo consolidation lines bridging South Indian manufacturing hubs to international ports." },
-  { year: "2019", title: "Strategic Enterprise Alliances", accent: false, desc: "Signed framework alliances with Nordic Retailers and AP Traders Group, scaling our network to 100+ countries and launching our first digital tracking portal." },
+  { year: "2019", title: "Strategic Enterprise Alliances", accent: false, desc: "Signed framework alliances with key retail and industrial clients, scaling our network across international corridors and launching our first digital tracking portal." },
   { year: "2026 · Now", title: "Sustainable Growth & Green Fleet", accent: true, desc: "Launching carbon-offset tracking, climate-regulated depots, and a fleet of electric last-mile containers for zero-emission dispatching across all primary corridors." },
-];
-
-const COMMITTEE = [
-  { initials: "CEO", name: "Sarah Jenkins", role: "Chief Executive Officer" },
-  { initials: "COO", name: "David Vance", role: "Chief Operations Officer" },
-  { initials: "CFO", name: "Aya Yoshida", role: "VP of Global Tariffs" },
 ];
 
 export default function AboutPage() {
@@ -106,7 +100,7 @@ export default function AboutPage() {
           <div className="grid grid-3 gap-lg" style={{ position: "relative", zIndex: 5, textAlign: "left" }}>
             {[
               { title: "Global Reach", desc: "Weekly charters serving 150+ countries. Direct clearance gates across major shipping straits and air flight slots.", target: "99.9", decimals: "1", suffix: "%", label: "Dispatch Reliability" },
-              { title: "Trusted Partner", desc: "Serving retail leaders and Nordic heavy industries with integrated supply hubs and GPS logistics monitoring.", target: "250", decimals: "0", suffix: "+", label: "Enterprise Partners" },
+              { title: "Trusted Partner", desc: "Serving retail and industrial clients with integrated supply hubs and GPS logistics monitoring.", target: "250", decimals: "0", suffix: "+", label: "Enterprise Partners" },
               { title: "End-to-End Solutions", desc: "Coordinating ocean container consolidations, customs brokers audits, and smart secure terminal warehousing.", target: "2.4", decimals: "1", suffix: "M+", label: "Completed Deliveries" },
             ].map((c, i) => (
               <div key={i} className="card" style={{ background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "var(--space-md)", borderRadius: "var(--radius-lg)" }}>
@@ -122,20 +116,6 @@ export default function AboutPage() {
 
       {/* ── PORT PARALLAX DIVIDER ────────────────────────────────────────── */}
       <div className="parallax-divider" style={{ backgroundImage: "url('/images/divider_port.webp')" }} />
-
-      {/* ── EXECUTIVE COMMITTEE ──────────────────────────────────────────── */}
-      <section className="container reveal-fade-up" style={{ marginBottom: "var(--space-3xl)" }}>
-        <h3 className="heading-3" style={{ color: "var(--color-primary-navy)", marginBottom: "var(--space-md)", textAlign: "center" }}>Executive Committee</h3>
-        <div className="grid grid-3 gap-md">
-          {COMMITTEE.map((m, i) => (
-            <div key={i} className="card text-center">
-              <div style={{ width: 80, height: 80, backgroundColor: "var(--color-light-bg)", borderRadius: "var(--radius-full)", margin: "0 auto var(--space-sm) auto", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, color: "var(--color-primary-blue)" }}>{m.initials}</div>
-              <h4 className="heading-4" style={{ marginBottom: 2 }}>{m.name}</h4>
-              <p style={{ fontSize: "var(--font-size-xs)", color: "var(--color-text-muted)", marginBottom: "var(--space-xs)" }}>{m.role}</p>
-            </div>
-          ))}
-        </div>
-      </section>
 
       {/* ── COMPANY JOURNEY TIMELINE ─────────────────────────────────────── */}
       <section className="container reveal-fade-up" style={{ marginBottom: "var(--space-3xl)", textAlign: "left" }}>

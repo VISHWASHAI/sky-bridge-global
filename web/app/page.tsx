@@ -1,7 +1,6 @@
 import Link from "next/link";
 import HeroPinCheck from "@/components/HeroPinCheck";
 import JourneyPipeline from "@/components/JourneyPipeline";
-import Testimonials from "@/components/Testimonials";
 
 const TRUST_STATS = [
   { n: "150+", l: "Countries" },
@@ -18,7 +17,7 @@ const SERVICE_CARDS = [
   { img: "/images/services_air.webp", title: "Customs Brokerage", desc: "Automated compliance audit filings, bonded clearance, and tariff assessments.", filter: "hue-rotate(200deg) brightness(0.85)" },
 ];
 
-const PARTNER_LOGOS = ["MAERSK LINE", "FEDEX SLOT", "DHL EXPRESS", "UPS SYSTEMS", "IATA MEMBER", "FIATA COMPL"];
+const PARTNER_LOGOS = ["MULTI-MODAL", "DOOR TO DOOR", "CUSTOMS CLEARED", "REAL-TIME TRACKING", "INSURED CARGO", "24/7 SUPPORT"];
 
 const MAP_HUBS = [
   { x: 80, y: 90, dur: "2.5s" },
@@ -205,14 +204,11 @@ export default function HomePage() {
       {/* ── JOURNEY PIPELINE ─────────────────────────────────────────────── */}
       <JourneyPipeline />
 
-      {/* ── TESTIMONIALS ─────────────────────────────────────────────────── */}
-      <Testimonials />
-
       {/* ── TRUST MARQUEE ────────────────────────────────────────────────── */}
       <section className="container reveal-fade-up" style={{ marginBottom: "var(--space-3xl)" }}>
         <div className="section-header" style={{ textAlign: "center", maxWidth: 500, margin: "0 auto var(--space-md) auto" }}>
-          <span className="section-label">Trusted Network</span>
-          <h3 className="heading-3" style={{ color: "var(--color-primary-navy)", marginBottom: 2 }}>Global Alliances &amp; Affiliations</h3>
+          <span className="section-label">Our Commitments</span>
+          <h3 className="heading-3" style={{ color: "var(--color-primary-navy)", marginBottom: 2 }}>Built for Reliable Delivery</h3>
         </div>
 
         <div className="trust-marquee-container">

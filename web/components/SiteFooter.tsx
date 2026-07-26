@@ -58,7 +58,7 @@ export default function SiteFooter() {
       <div className="container footer-bottom">
         <p>&copy; 2026 Sky Bridge Global · Robertsonpet, Kolar, Karnataka, India</p>
         <div className="footer-bottom-links">
-          <span>Proprietorship</span>
+          <span>Proprietorship · Arivazhagan K</span>
           <span>Karnataka, India</span>
         </div>
       </div>

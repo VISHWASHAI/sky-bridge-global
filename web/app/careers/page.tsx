@@ -3,44 +3,44 @@ import Link from "next/link";
 export const metadata = {
   title: "Careers — Join Our Logistics Team",
   description:
-    "Explore open roles at Sky Bridge Global across supply chain analysis, customs compliance, and freight sales — international offices, competitive pay, global mobility benefits.",
+    "Explore open roles at Sky Bridge Global across logistics operations, customs compliance, and freight sales — based in Kolar, Karnataka with competitive pay, health insurance, and provident fund.",
 };
 
 const JOBS = [
   {
-    title: "Global Supply Chain Analyst",
+    title: "Logistics Operations Executive",
     dept: "Operations & Strategy",
-    location: "New York, USA",
+    location: "Kolar, Karnataka",
     type: "Full-time",
-    salary: "$85,000 - $110,000",
-    desc: "We are seeking an experienced analyst to optimize supply chain pipelines for major Fortune 500 accounts. You will design logistics networks, track carrier SLA performances, and implement inventory management models.",
-    reqs: ["Bachelor degree in Logistics, Analytics, or Industrial Engineering", "3+ years experience with WMS, SQL, and data visualization tools", "Strong communication and client management skills"],
+    salary: "₹3–5 LPA",
+    desc: "Coordinate day-to-day freight movement for domestic and export clients — booking carriers, tracking shipments, and keeping customers updated from pickup to delivery. You will optimise routing across air, sea, and road and maintain accurate shipment records.",
+    reqs: ["Bachelor's degree in Logistics, Commerce, or a related field", "1–3 years in logistics/freight operations (freshers with strong Excel skills welcome)", "Good communication in English, Kannada, and Hindi"],
   },
   {
     title: "Customs Compliance Officer",
     dept: "Regulatory Affairs",
-    location: "Hamburg, Germany",
+    location: "Kolar, Karnataka",
     type: "Full-time",
-    salary: "€70,000 - €90,000",
-    desc: "Ensure compliance with German export laws and EU custom tariffs. Maintain regulatory licenses, file declarations, and interface with government customs agencies.",
-    reqs: ["Certified Customs Broker license or equivalent training", "Expert knowledge of EU tariff structures and HS classification systems", "Fluent in German and English"],
+    salary: "₹4–6 LPA",
+    desc: "Handle Indian import/export customs compliance — file declarations on ICEGATE, manage HS classification and GST documentation, and liaise with customs and CHA partners to keep shipments moving.",
+    reqs: ["Knowledge of Indian customs procedures, ICEGATE, and HS classification", "Customs broker G-card/H-card or equivalent experience preferred", "Familiarity with GST and export documentation"],
   },
   {
     title: "Freight Sales Manager",
     dept: "Sales & Marketing",
-    location: "Singapore",
+    location: "Bengaluru, Karnataka",
     type: "Full-time",
-    salary: "SG$90,000 + Commissions",
-    desc: "Drive growth in sea and air freight volumes across Asia-Pacific corridors. Cultivate new client relationships, negotiate service contracts, and prepare pricing quotations.",
-    reqs: ["Proven track record in freight forwarding sales", "Strong corporate networking connections in APAC region", "Excellent negotiation and presentation capabilities"],
+    salary: "₹5–8 LPA + Incentives",
+    desc: "Grow air, sea, and road freight volumes across South India and export corridors. Build client relationships, prepare quotations, and negotiate service contracts with importers and exporters.",
+    reqs: ["Proven track record in freight forwarding or logistics sales", "Strong client network across Karnataka / South India", "Excellent negotiation and presentation skills"],
   },
 ];
 
 const BENEFITS = [
-  { title: "Global Mobility", desc: "Relocation support and rotations across international hub offices." },
-  { title: "Health & Wellness", desc: "Comprehensive medical coverage for you and your family." },
-  { title: "Learning Budget", desc: "Annual stipend for certifications, courses, and conferences." },
-  { title: "Performance Bonus", desc: "Quarterly incentives tied to network growth milestones." },
+  { title: "Health Insurance", desc: "Medical coverage for you and your family." },
+  { title: "Provident Fund & ESI", desc: "Statutory PF and ESI contributions from day one." },
+  { title: "Learning Budget", desc: "Annual stipend for certifications, courses, and workshops." },
+  { title: "Performance Incentives", desc: "Quarterly incentives tied to growth milestones." },
 ];
 
 export default function CareersPage() {
@@ -55,7 +55,7 @@ export default function CareersPage() {
             Build the Future of<br />Global Logistics
           </h1>
           <p style={{ color: "rgba(255,255,255,0.55)", fontSize: "1rem", maxWidth: 560, lineHeight: 1.75 }}>
-            Help us connect supply chains across land, air and ocean. Explore open roles across our international offices.
+            Help us connect supply chains across land, air and ocean. Explore open roles at our Kolar, Karnataka base and across our India network.
           </p>
         </div>
       </div>

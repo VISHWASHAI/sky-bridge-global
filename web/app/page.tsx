@@ -3,10 +3,10 @@ import HeroPinCheck from "@/components/HeroPinCheck";
 import JourneyPipeline from "@/components/JourneyPipeline";
 
 const TRUST_STATS = [
-  { n: "150+", l: "Countries" },
-  { n: "2.4M+", l: "Deliveries" },
-  { n: "25+", l: "Years" },
-  { n: "250+", l: "Partners" },
+  { n: "Air · Sea · Road", l: "Multi-Modal Freight" },
+  { n: "Customs", l: "Clearance & Brokerage" },
+  { n: "Live", l: "Shipment Tracking" },
+  { n: "Global", l: "Export Handling" },
 ];
 
 const SERVICE_CARDS = [
@@ -45,8 +45,8 @@ export default function HomePage() {
             </h1>
             <p className="hero-subtitle" style={{ fontSize: "1.125rem", lineHeight: 1.75, maxWidth: 580, color: "rgba(255,255,255,0.7)" }}>
               Sky Bridge Global handles air freight charters, FCL/LCL ocean cargo,
-              road freight and customs clearance for Indian businesses shipping to
-              150+ countries — with live tracking from pickup to delivery.
+              road freight and customs clearance for Indian businesses shipping
+              worldwide — with live tracking from pickup to delivery.
             </p>
 
             <HeroPinCheck />
@@ -89,20 +89,20 @@ export default function HomePage() {
 
           <div className="stats-grid" style={{ position: "relative", zIndex: 2 }}>
             <div className="stat-item">
-              <div className="stat-number stat-count" data-target="150" data-suffix="+">0</div>
-              <div className="stat-label">Countries Served</div>
+              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Air Freight</div>
+              <div className="stat-label">Priority Charters</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number stat-count" data-target="2.4" data-decimals="1" data-suffix="M+">0</div>
-              <div className="stat-label">Deliveries Completed</div>
+              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Ocean Cargo</div>
+              <div className="stat-label">FCL &amp; LCL</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number stat-count" data-target="250" data-suffix="+">0</div>
-              <div className="stat-label">Global Partners</div>
+              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Road Transport</div>
+              <div className="stat-label">GPS-Tracked Fleet</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number stat-count" data-target="25" data-suffix="+">0</div>
-              <div className="stat-label">Years Experience</div>
+              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Customs</div>
+              <div className="stat-label">Clearance &amp; Brokerage</div>
             </div>
           </div>
         </div>

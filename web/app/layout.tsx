@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     template: "%s | Sky Bridge Global",
   },
   description:
-    "Sky Bridge Global is a freight forwarding and customs brokerage company based in Robertsonpet, Kolar, Karnataka, offering air freight, sea cargo, road transport, warehousing and customs clearance across 150+ countries.",
+    "Sky Bridge Global is a freight forwarding and customs brokerage company based in Robertsonpet, Kolar, Karnataka, offering air freight, sea cargo, road transport, warehousing and customs clearance for businesses shipping across India and worldwide.",
   keywords: [
     "freight forwarding India",
     "customs clearance agent Kolar",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     siteName: "Sky Bridge Global",
     title: "Sky Bridge Global | Freight Forwarding & Customs Clearance",
     description:
-      "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — serving 150+ countries.",
+      "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — for domestic and international shipments.",
     url: SITE_URL,
     images: [{ url: "/images/og-cover.jpg", width: 1200, height: 630 }],
   },
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Sky Bridge Global | Freight Forwarding & Customs Clearance",
     description:
-      "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — serving 150+ countries.",
+      "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — for domestic and international shipments.",
   },
   icons: { icon: "/images/logo_badge_circle.webp" },
 };

@@ -13,7 +13,7 @@ export default function SiteFooter() {
           <p className="footer-tagline">
             Connecting supply chains across land, air and ocean. Resilient
             logistics, smart border compliance, and express cargo routes across
-            150+ countries.
+            India and worldwide.
           </p>
           <div className="top-contact-socials" style={{ marginTop: 8 }}>
             <a href="https://www.instagram.com/sky_bridge_global_official?igsh=aDZjbGlrdWdna2p4" target="_blank" rel="noopener" aria-label="Instagram">
@@ -58,7 +58,7 @@ export default function SiteFooter() {
       <div className="container footer-bottom">
         <p>&copy; 2026 Sky Bridge Global · Robertsonpet, Kolar, Karnataka, India</p>
         <div className="footer-bottom-links">
-          <span>Proprietorship · Arivazhagan K</span>
+          <span>Proprietorship</span>
           <span>Karnataka, India</span>
         </div>
       </div>

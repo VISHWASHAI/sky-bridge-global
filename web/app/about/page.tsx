@@ -3,16 +3,8 @@ import Link from "next/link";
 export const metadata = {
   title: "About Us — Freight Forwarding Company in Kolar, Karnataka",
   description:
-    "Founded in 2001 by Arivazhagan K, Sky Bridge Global is a freight and customs brokerage company headquartered in Robertsonpet, Kolar, Karnataka, serving 150+ countries with 99.9% dispatch reliability.",
+    "Sky Bridge Global is a freight forwarding and customs brokerage company headquartered in Robertsonpet, Kolar, Karnataka, offering air, sea and road freight, warehousing and customs clearance for businesses shipping across India and worldwide.",
 };
-
-const MILESTONES = [
-  { year: "2001", title: "Company Foundation", accent: true, desc: "Established by Arivazhagan K as a regional freight and customs brokerage firm in Robertsonpet, Kolar, Karnataka, India — coordinating compliance filings and duty clearances for local and regional importers." },
-  { year: "2007", title: "First International Air Cargo Charter", accent: false, desc: "Successfully managed our first international air freight charter from Frankfurt to Chicago and opened transit agent offices at major airport corridors worldwide." },
-  { year: "2013", title: "Expansion into Global Markets", accent: false, desc: "Expanded operations to serve pan-India freight corridors and launched multi-modal LCL cargo consolidation lines bridging South Indian manufacturing hubs to international ports." },
-  { year: "2019", title: "Strategic Enterprise Alliances", accent: false, desc: "Signed framework alliances with key retail and industrial clients, scaling our network across international corridors and launching our first digital tracking portal." },
-  { year: "2026 · Now", title: "Sustainable Growth & Green Fleet", accent: true, desc: "Launching carbon-offset tracking, climate-regulated depots, and a fleet of electric last-mile containers for zero-emission dispatching across all primary corridors." },
-];
 
 export default function AboutPage() {
   return (
@@ -36,7 +28,7 @@ export default function AboutPage() {
         <span className="badge badge-primary" style={{ marginBottom: "var(--space-xs)" }}>Corporate Profile</span>
         <h2 className="heading-2" style={{ color: "var(--color-primary-navy)", marginBottom: "var(--space-sm)" }}>About Sky Bridge Global</h2>
         <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7, fontSize: "var(--font-size-sm)", marginBottom: "var(--space-md)" }}>
-          Sky Bridge Global, founded by Arivazhagan K and headquartered in Robertsonpet, Kolar, Karnataka, is a professional logistics and supply chain solutions company dedicated to reliable, efficient, and cost-effective transportation. We provide integrated logistics services that simplify supply chain operations for businesses of all sizes — handling air freight, sea cargo, road transport, warehousing, and customs brokerage across domestic and international markets. Through customized logistics solutions, modern practices, and experienced professionals, we deliver safe, timely, and high-quality services while building long-term business relationships rooted in customer satisfaction and operational excellence.
+          Sky Bridge Global, headquartered in Robertsonpet, Kolar, Karnataka, is a professional logistics and supply chain solutions company dedicated to reliable, efficient, and cost-effective transportation. We provide integrated logistics services that simplify supply chain operations for businesses of all sizes — handling air freight, sea cargo, road transport, warehousing, and customs brokerage across domestic and international markets. Through customized logistics solutions, modern practices, and experienced professionals, we deliver safe, timely, and high-quality services while building long-term business relationships rooted in customer satisfaction and operational excellence.
         </p>
 
         <div className="grid grid-2 gap-lg" style={{ marginTop: "var(--space-xl)" }}>
@@ -99,15 +91,13 @@ export default function AboutPage() {
 
           <div className="grid grid-3 gap-lg" style={{ position: "relative", zIndex: 5, textAlign: "left" }}>
             {[
-              { title: "Global Reach", desc: "Weekly charters serving 150+ countries. Direct clearance gates across major shipping straits and air flight slots.", target: "99.9", decimals: "1", suffix: "%", label: "Dispatch Reliability" },
-              { title: "Trusted Partner", desc: "Serving retail and industrial clients with integrated supply hubs and GPS logistics monitoring.", target: "250", decimals: "0", suffix: "+", label: "Enterprise Partners" },
-              { title: "End-to-End Solutions", desc: "Coordinating ocean container consolidations, customs brokers audits, and smart secure terminal warehousing.", target: "2.4", decimals: "1", suffix: "M+", label: "Completed Deliveries" },
+              { title: "Multi-Modal Reach", desc: "Air, sea, and road freight across India and international corridors, with direct customs clearance handling." },
+              { title: "Dedicated Service", desc: "Personal coordination for retail and industrial clients, with integrated supply hubs and GPS logistics monitoring." },
+              { title: "End-to-End Solutions", desc: "Ocean container consolidation, customs brokerage audits, and secure terminal warehousing under one roof." },
             ].map((c, i) => (
               <div key={i} className="card" style={{ background: "rgba(255, 255, 255, 0.03)", border: "1px solid rgba(255, 255, 255, 0.08)", padding: "var(--space-md)", borderRadius: "var(--radius-lg)" }}>
                 <h4 className="heading-4" style={{ color: "white", marginBottom: 6 }}>{c.title}</h4>
-                <p style={{ fontSize: "var(--font-size-xs)", color: "var(--sky-200)", lineHeight: 1.5, marginBottom: "var(--space-sm)" }}>{c.desc}</p>
-                <div className="stat-number stat-count" data-target={c.target} data-decimals={c.decimals} data-suffix={c.suffix} style={{ color: "var(--accent-orange)", fontSize: "var(--font-size-2xl)" }}>0</div>
-                <span style={{ fontSize: 10, color: "var(--sky-300)", textTransform: "uppercase", fontWeight: 600, letterSpacing: "0.05em" }}>{c.label}</span>
+                <p style={{ fontSize: "var(--font-size-xs)", color: "var(--sky-200)", lineHeight: 1.5 }}>{c.desc}</p>
               </div>
             ))}
           </div>
@@ -116,30 +106,6 @@ export default function AboutPage() {
 
       {/* ── PORT PARALLAX DIVIDER ────────────────────────────────────────── */}
       <div className="parallax-divider" style={{ backgroundImage: "url('/images/divider_port.webp')" }} />
-
-      {/* ── COMPANY JOURNEY TIMELINE ─────────────────────────────────────── */}
-      <section className="container reveal-fade-up" style={{ marginBottom: "var(--space-3xl)", textAlign: "left" }}>
-        <div className="section-header">
-          <span className="section-label">Our History</span>
-          <h2 className="section-title">Company Journey</h2>
-          <p className="section-desc">Key milestones that shaped Sky Bridge Global into an international cargo consolidator.</p>
-        </div>
-        <div style={{ position: "relative", paddingLeft: 32 }}>
-          <div style={{ position: "absolute", left: 11, top: 8, bottom: 8, width: 2, background: "linear-gradient(to bottom, var(--color-primary-blue), rgba(66,149,232,0.1))" }} />
-
-          {MILESTONES.map((m, i) => {
-            const color = m.accent ? "var(--accent-orange)" : "var(--color-primary-blue)";
-            return (
-              <div key={i} style={{ position: "relative", marginBottom: i === MILESTONES.length - 1 ? 0 : 40, paddingLeft: 32 }}>
-                <div style={{ position: "absolute", left: -21, top: 4, width: 20, height: 20, borderRadius: "50%", background: color, border: "3px solid #fff", boxShadow: `0 0 0 3px ${color}` }} />
-                <span style={{ fontSize: 11, fontWeight: 700, color, textTransform: "uppercase", letterSpacing: "0.08em" }}>{m.year}</span>
-                <h4 style={{ fontFamily: "var(--font-header)", fontSize: "1.1rem", fontWeight: 700, color: "var(--color-primary-navy)", margin: "4px 0 8px" }}>{m.title}</h4>
-                <p style={{ fontSize: 14, color: "var(--color-text-muted)", lineHeight: 1.65, maxWidth: 600 }}>{m.desc}</p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
     </main>
   );
 }

@@ -19,13 +19,16 @@ const SERVICE_CARDS = [
 
 const PARTNER_LOGOS = ["MULTI-MODAL", "DOOR TO DOOR", "CUSTOMS CLEARED", "REAL-TIME TRACKING", "INSURED CARGO", "24/7 SUPPORT"];
 
-const MAP_HUBS = [
-  { x: 80, y: 90, dur: "2.5s" },
-  { x: 220, y: 70, dur: "2s" },
-  { x: 350, y: 150, dur: "2.8s" },
-  { x: 400, y: 100, dur: "2.2s" },
-  { x: 430, y: 220, dur: "2.6s" },
+const HOME = { x: 132, y: 176 };
+const CORRIDORS = [
+  { name: "Europe", x: 300, y: 78, dur: "5s" },
+  { name: "Middle East", x: 420, y: 132, dur: "6s" },
+  { name: "East Asia", x: 442, y: 214, dur: "7s" },
+  { name: "Southeast Asia", x: 356, y: 276, dur: "5.5s" },
+  { name: "Africa", x: 244, y: 286, dur: "6.5s" },
 ];
+const corridorPath = (d: { x: number; y: number }) =>
+  `M ${HOME.x} ${HOME.y} Q ${(HOME.x + d.x) / 2} ${Math.min(HOME.y, d.y) - 48} ${d.x} ${d.y}`;
 
 export default function HomePage() {
   return (
@@ -120,48 +123,61 @@ export default function HomePage() {
             <Link href="/about" className="btn btn-outline">Our Network Story</Link>
           </div>
 
-          <div className="map-placeholder" style={{ height: 350, backgroundColor: "var(--navy-900)", borderColor: "var(--navy-800)", position: "relative", overflow: "hidden", borderRadius: "var(--radius-lg)" }}>
-            <svg viewBox="0 0 500 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" style={{ background: "transparent" }}>
-              <path d="M 30 50 Q 80 40 100 80 Q 90 120 70 140 Q 50 110 30 50 Z" fill="rgba(66, 149, 232, 0.08)" stroke="rgba(66, 149, 232, 0.15)" strokeWidth="1" />
-              <path d="M 80 150 Q 110 160 120 180 Q 100 240 80 270 Q 60 210 80 150 Z" fill="rgba(66, 149, 232, 0.08)" stroke="rgba(66, 149, 232, 0.15)" strokeWidth="1" />
-              <path d="M 200 40 Q 250 30 270 70 Q 250 100 240 130 Q 220 140 210 110 Q 180 80 200 40 Z" fill="rgba(66, 149, 232, 0.08)" stroke="rgba(66, 149, 232, 0.15)" strokeWidth="1" />
-              <path d="M 220 140 Q 270 140 280 180 Q 250 240 220 250 Q 200 210 220 140 Z" fill="rgba(66, 149, 232, 0.08)" stroke="rgba(66, 149, 232, 0.15)" strokeWidth="1" />
-              <path d="M 280 60 Q 380 40 440 80 Q 420 140 370 170 Q 310 150 280 60 Z" fill="rgba(66, 149, 232, 0.08)" stroke="rgba(66, 149, 232, 0.15)" strokeWidth="1" />
-              <path d="M 400 200 Q 450 200 460 230 Q 420 260 400 200 Z" fill="rgba(66, 149, 232, 0.08)" stroke="rgba(66, 149, 232, 0.15)" strokeWidth="1" />
+          <div className="map-placeholder" style={{ height: 350, background: "linear-gradient(160deg,#0a1322 0%,#060c18 100%)", border: "1px solid rgba(66,149,232,0.15)", position: "relative", overflow: "hidden", borderRadius: "var(--radius-lg)" }}>
+            <span style={{ position: "absolute", top: 14, left: 16, zIndex: 10, fontSize: 10, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(148,163,184,0.9)", fontWeight: 700 }}>Freight Corridors from India</span>
 
-              <path id="route1" d="M 80 90 Q 150 65 220 70" stroke="var(--blue-400)" strokeWidth="1.5" strokeDasharray="4,4" fill="none" opacity="0.45" />
-              <path id="route2" d="M 220 70 Q 285 100 350 150" stroke="var(--blue-400)" strokeWidth="1.5" strokeDasharray="4,4" fill="none" opacity="0.45" />
-              <path id="route3" d="M 350 150 Q 375 120 400 100" stroke="var(--blue-400)" strokeWidth="1.5" strokeDasharray="4,4" fill="none" opacity="0.45" />
-              <path id="route4" d="M 400 100 Q 415 160 430 220" stroke="var(--blue-400)" strokeWidth="1.5" strokeDasharray="4,4" fill="none" opacity="0.45" />
-              <path id="route6" d="M 80 90 Q 250 200 430 220" stroke="var(--blue-400)" strokeWidth="1.5" strokeDasharray="4,4" fill="none" opacity="0.4" />
+            <svg viewBox="0 0 500 340" width="100%" height="100%" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              {/* Reach rings radiating from the home hub */}
+              {[62, 116, 172].map((r) => (
+                <circle key={r} cx={HOME.x} cy={HOME.y} r={r} fill="none" stroke="rgba(66,149,232,0.12)" strokeWidth="1" />
+              ))}
 
-              {["route1", "route2", "route3", "route4", "route6"].map((r, i) => (
-                <circle key={r} r="3.5" fill="var(--accent-orange)">
-                  <animateMotion dur={`${[5, 7, 4, 6, 8][i]}s`} repeatCount="indefinite">
-                    <mpath href={`#${r}`} />
+              {/* Corridor routes */}
+              {CORRIDORS.map((c, i) => (
+                <path key={`p${i}`} id={`corr-${i}`} d={corridorPath(c)} fill="none" stroke="rgba(66,149,232,0.5)" strokeWidth="1.4" strokeDasharray="5,5" />
+              ))}
+
+              {/* Animated cargo pulses travelling the routes */}
+              {CORRIDORS.map((c, i) => (
+                <circle key={`m${i}`} r="3" fill="var(--accent-orange)">
+                  <animateMotion dur={c.dur} repeatCount="indefinite">
+                    <mpath href={`#corr-${i}`} />
                   </animateMotion>
                 </circle>
               ))}
 
-              {MAP_HUBS.map((h, i) => (
-                <g key={i} transform={`translate(${h.x}, ${h.y})`}>
-                  <circle cx="0" cy="0" r="3.5" fill="#ffffff" />
-                  <circle cx="0" cy="0" r="8" fill="var(--accent-orange)" opacity="0.6">
-                    <animate attributeName="r" values="3.5;9;3.5" dur={h.dur} repeatCount="indefinite" />
-                    <animate attributeName="opacity" values="0.7;0;0.7" dur={h.dur} repeatCount="indefinite" />
+              {/* Destination nodes + labels */}
+              {CORRIDORS.map((c, i) => (
+                <g key={`n${i}`}>
+                  <circle cx={c.x} cy={c.y} r="4" fill="#e2e8f0" />
+                  <circle cx={c.x} cy={c.y} r="4" fill="none" stroke="rgba(226,232,240,0.4)" strokeWidth="1">
+                    <animate attributeName="r" values="4;9;4" dur="3s" begin={`${i * 0.4}s`} repeatCount="indefinite" />
+                    <animate attributeName="opacity" values="0.6;0;0.6" dur="3s" begin={`${i * 0.4}s`} repeatCount="indefinite" />
                   </circle>
+                  <text x={c.x} y={c.y + 18} textAnchor="middle" fontFamily="var(--font-header)" fontSize="10" fontWeight="600" fill="rgba(203,213,225,0.9)">{c.name}</text>
                 </g>
               ))}
+
+              {/* Home hub — Kolar, India */}
+              <g>
+                <circle cx={HOME.x} cy={HOME.y} r="16" fill="rgba(244,180,0,0.18)">
+                  <animate attributeName="r" values="13;22;13" dur="2.6s" repeatCount="indefinite" />
+                  <animate attributeName="opacity" values="0.55;0;0.55" dur="2.6s" repeatCount="indefinite" />
+                </circle>
+                <circle cx={HOME.x} cy={HOME.y} r="6.5" fill="var(--accent-orange)" stroke="#fff" strokeWidth="1.5" />
+                <text x={HOME.x} y={HOME.y - 15} textAnchor="middle" fontFamily="var(--font-header)" fontSize="11" fontWeight="800" fill="#fff" letterSpacing="0.03em">KOLAR</text>
+                <text x={HOME.x} y={HOME.y + 23} textAnchor="middle" fontSize="8.5" fontWeight="700" fill="var(--accent-orange)" letterSpacing="0.14em">HOME HUB</text>
+              </g>
             </svg>
 
-            <div style={{ position: "absolute", bottom: 10, right: 10, background: "rgba(15, 23, 42, 0.85)", backdropFilter: "blur(8px)", padding: "6px 10px", borderRadius: "var(--radius-sm)", border: "1px solid rgba(255,255,255,0.08)", fontSize: 10, color: "#94a3b8", textAlign: "left", zIndex: 10 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 2 }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--accent-orange)", display: "inline-block", boxShadow: "0 0 5px var(--accent-orange)" }} />
-                Active Cargo Transits
+            <div style={{ position: "absolute", bottom: 12, right: 12, background: "rgba(6,12,24,0.7)", backdropFilter: "blur(8px)", padding: "7px 11px", borderRadius: "var(--radius-sm)", border: "1px solid rgba(255,255,255,0.08)", fontSize: 10, color: "#94a3b8", textAlign: "left", zIndex: 10, lineHeight: 1.8 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--accent-orange)", display: "inline-block", boxShadow: "0 0 6px var(--accent-orange)" }} />
+                Kolar HQ
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 6 }}>
-                <span style={{ width: 6, height: 6, borderRadius: "50%", background: "#ffffff", display: "inline-block" }} />
-                Global Logistics Hubs
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#e2e8f0", display: "inline-block" }} />
+                Export corridors
               </div>
             </div>
           </div>

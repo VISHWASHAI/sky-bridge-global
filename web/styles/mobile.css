@@ -314,6 +314,7 @@
 
     /* ── Journey pipeline ────────────────────────────────────────────────── */
     .journey-pipeline-card { padding: var(--space-md) !important; }
+    .journey-node .node-label { font-size: 9.5px; letter-spacing: -0.01em; line-height: 1.2; text-align: center; }
 
     /* ── Testimonials ─────────────────────────────────────────────────────── */
     .testimonial-slide { padding: var(--space-md) !important; }

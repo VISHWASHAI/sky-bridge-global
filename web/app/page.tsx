@@ -73,9 +73,9 @@ export default function HomePage() {
 
             <div className="hero-trust-bar" style={{ marginTop: 48, display: "flex", alignItems: "center", gap: 24, borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 24 }}>
               {TRUST_STATS.map((s, i) => (
-                <div key={i} style={{ textAlign: "center" }}>
-                  <div style={{ fontFamily: "var(--font-header)", fontSize: "1.4rem", fontWeight: 800, color: "#fff" }}>{s.n}</div>
-                  <div style={{ fontSize: 11, color: "rgba(255,255,255,0.45)", textTransform: "uppercase", letterSpacing: "0.06em" }}>{s.l}</div>
+                <div key={i} style={{ textAlign: "center", padding: "0 4px" }}>
+                  <div style={{ fontFamily: "var(--font-header)", fontSize: "clamp(0.95rem, 2.6vw, 1.35rem)", fontWeight: 800, color: "#fff", lineHeight: 1.2 }}>{s.n}</div>
+                  <div style={{ fontSize: 10.5, color: "rgba(255,255,255,0.45)", textTransform: "uppercase", letterSpacing: "0.05em" }}>{s.l}</div>
                 </div>
               ))}
             </div>
@@ -98,22 +98,17 @@ export default function HomePage() {
           </svg>
 
           <div className="stats-grid" style={{ position: "relative", zIndex: 2 }}>
-            <div className="stat-item">
-              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Air Freight</div>
-              <div className="stat-label">Priority Charters</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Ocean Cargo</div>
-              <div className="stat-label">FCL &amp; LCL</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Road Transport</div>
-              <div className="stat-label">GPS-Tracked Fleet</div>
-            </div>
-            <div className="stat-item">
-              <div className="stat-number" style={{ fontSize: "1.6rem" }}>Customs</div>
-              <div className="stat-label">Clearance &amp; Brokerage</div>
-            </div>
+            {[
+              { t: "Air Freight", d: "Priority Charters" },
+              { t: "Ocean Cargo", d: "FCL & LCL" },
+              { t: "Road Transport", d: "GPS-Tracked Fleet" },
+              { t: "Customs", d: "Clearance & Brokerage" },
+            ].map((s, i) => (
+              <div key={i} className="stat-item">
+                <div style={{ fontFamily: "var(--font-header)", fontSize: "clamp(1.05rem, 3.2vw, 1.5rem)", fontWeight: 800, color: "var(--color-primary-navy)", lineHeight: 1.15 }}>{s.t}</div>
+                <div className="stat-label">{s.d}</div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

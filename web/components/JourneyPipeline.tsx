@@ -26,9 +26,9 @@ export default function JourneyPipeline() {
   return (
     <section className="container reveal-fade-up journey-section" style={{ marginBottom: "var(--space-3xl)" }}>
       <div className="section-header">
-        <span className="section-label">Real-Time Dispatch Pipeline</span>
-        <h2 className="section-title">Automated Journey Pipeline</h2>
-        <p className="section-desc">Track a simulated shipment transit across international control points.</p>
+        <span className="section-label">The Shipment Journey</span>
+        <h2 className="section-title">How Your Shipment Moves</h2>
+        <p className="section-desc">Every shipment moves through five tracked stages — from pickup to delivery — with live updates at each step.</p>
       </div>
 
       <div className="journey-pipeline-card card" style={{ padding: "var(--space-xl)", position: "relative", backgroundColor: "var(--color-card-bg)", borderRadius: "var(--radius-xl)", overflow: "hidden" }}>

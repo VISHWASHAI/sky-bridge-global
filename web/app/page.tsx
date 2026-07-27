@@ -17,7 +17,14 @@ const SERVICE_CARDS = [
   { img: "/images/services_air.webp", title: "Customs Brokerage", desc: "Automated compliance audit filings, bonded clearance, and tariff assessments.", filter: "hue-rotate(200deg) brightness(0.85)" },
 ];
 
-const PARTNER_LOGOS = ["MULTI-MODAL", "DOOR TO DOOR", "CUSTOMS CLEARED", "REAL-TIME TRACKING", "INSURED CARGO", "24/7 SUPPORT"];
+const COMMITMENTS = [
+  { label: "Multi-Modal Freight", icon: <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2" /><polyline points="2 17 12 22 22 17" /><polyline points="2 12 12 17 22 12" /></svg> },
+  { label: "Door-to-Door", icon: <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg> },
+  { label: "Customs Cleared", icon: <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" /><polyline points="14 2 14 8 20 8" /><polyline points="9 15 11 17 15 13" /></svg> },
+  { label: "Real-Time Tracking", icon: <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" /></svg> },
+  { label: "Insured Cargo", icon: <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg> },
+  { label: "24/7 Support", icon: <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" /></svg> },
+];
 
 const HOME = { x: 132, y: 176 };
 const CORRIDORS = [
@@ -227,16 +234,28 @@ export default function HomePage() {
           <h3 className="heading-3" style={{ color: "var(--color-primary-navy)", marginBottom: 2 }}>Built for Reliable Delivery</h3>
         </div>
 
-        <div className="trust-marquee-container">
-          <div className="marquee-track">
-            {[...PARTNER_LOGOS, ...PARTNER_LOGOS].map((name, i) => (
-              <div key={i} className="logo-item" style={{ width: 120 }}>
-                <svg width="120" height="40" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 120 40">
-                  <text x="60" y="25" textAnchor="middle" fontFamily="'Outfit', sans-serif" fontWeight="800" fontSize="14">{name}</text>
-                </svg>
-              </div>
-            ))}
-          </div>
+        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: 12 }}>
+          {COMMITMENTS.map((c, i) => (
+            <div
+              key={i}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 9,
+                padding: "10px 18px",
+                border: "1px solid var(--color-border)",
+                borderRadius: 999,
+                background: "#fff",
+                boxShadow: "var(--shadow-sm)",
+                fontWeight: 600,
+                fontSize: "var(--font-size-sm)",
+                color: "var(--color-primary-navy)",
+              }}
+            >
+              <span style={{ color: "var(--color-primary-blue)", display: "flex" }}>{c.icon}</span>
+              {c.label}
+            </div>
+          ))}
         </div>
       </section>
 

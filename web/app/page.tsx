@@ -215,9 +215,10 @@ export default function HomePage() {
 
       {/* ── PORT IMAGE DIVIDER ───────────────────────────────────────────── */}
       <div className="container" style={{ marginBottom: "var(--space-3xl)" }}>
-        <div style={{ width: "100%", height: 180, background: "url('/images/divider_port.webp') center/cover no-repeat", position: "relative", borderRadius: "var(--radius-xl)", overflow: "hidden" }}>
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(10,19,34,0.72) 0%, rgba(10,19,34,0.2) 50%, rgba(10,19,34,0.72) 100%)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-            <p style={{ color: "rgba(255,255,255,0.85)", fontFamily: "var(--font-header)", fontSize: "1.1rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", textAlign: "center" }}>
+        <div style={{ width: "100%", height: 190, background: "url('/images/divider_port.webp') center/cover no-repeat", position: "relative", borderRadius: "var(--radius-xl)", overflow: "hidden" }}>
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(6,12,24,0.9) 0%, rgba(6,12,24,0.62) 50%, rgba(6,12,24,0.9) 100%)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 12, textAlign: "center", padding: "0 24px" }}>
+            <span style={{ width: 44, height: 3, background: "var(--accent-orange)", borderRadius: 2 }} />
+            <p style={{ color: "#fff", fontFamily: "var(--font-header)", fontSize: "clamp(1rem, 2.2vw, 1.35rem)", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", margin: 0, textShadow: "0 2px 16px rgba(0,0,0,0.55)" }}>
               Precision Logistics · Every Route · Every Cargo Type
             </p>
           </div>

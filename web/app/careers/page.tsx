@@ -1,40 +1,14 @@
 import Link from "next/link";
+import { getSupabaseServerClient } from "@/lib/supabase/server";
+import type { JobRow } from "@/lib/jobs";
+
+export const dynamic = "force-dynamic";
 
 export const metadata = {
   title: "Careers — Join Our Logistics Team",
   description:
     "Explore open roles at Sky Bridge Global across logistics operations, customs compliance, and freight sales — based in Kolar, Karnataka with competitive pay, health insurance, and provident fund.",
 };
-
-const JOBS = [
-  {
-    title: "Logistics Operations Executive",
-    dept: "Operations & Strategy",
-    location: "Kolar, Karnataka",
-    type: "Full-time",
-    salary: "₹3–5 LPA",
-    desc: "Coordinate day-to-day freight movement for domestic and export clients — booking carriers, tracking shipments, and keeping customers updated from pickup to delivery. You will optimise routing across air, sea, and road and maintain accurate shipment records.",
-    reqs: ["Bachelor's degree in Logistics, Commerce, or a related field", "1–3 years in logistics/freight operations (freshers with strong Excel skills welcome)", "Good communication in English, Kannada, and Hindi"],
-  },
-  {
-    title: "Customs Compliance Officer",
-    dept: "Regulatory Affairs",
-    location: "Kolar, Karnataka",
-    type: "Full-time",
-    salary: "₹4–6 LPA",
-    desc: "Handle Indian import/export customs compliance — file declarations on ICEGATE, manage HS classification and GST documentation, and liaise with customs and CHA partners to keep shipments moving.",
-    reqs: ["Knowledge of Indian customs procedures, ICEGATE, and HS classification", "Customs broker G-card/H-card or equivalent experience preferred", "Familiarity with GST and export documentation"],
-  },
-  {
-    title: "Freight Sales Manager",
-    dept: "Sales & Marketing",
-    location: "Bengaluru, Karnataka",
-    type: "Full-time",
-    salary: "₹5–8 LPA + Incentives",
-    desc: "Grow air, sea, and road freight volumes across South India and export corridors. Build client relationships, prepare quotations, and negotiate service contracts with importers and exporters.",
-    reqs: ["Proven track record in freight forwarding or logistics sales", "Strong client network across Karnataka / South India", "Excellent negotiation and presentation skills"],
-  },
-];
 
 const BENEFITS = [
   { title: "Health Insurance", desc: "Medical coverage for you and your family." },
@@ -43,7 +17,19 @@ const BENEFITS = [
   { title: "Performance Incentives", desc: "Quarterly incentives tied to growth milestones." },
 ];
 
-export default function CareersPage() {
+export default async function CareersPage() {
+  const supabase = getSupabaseServerClient();
+  let jobs: JobRow[] = [];
+  if (supabase) {
+    const { data } = await supabase
+      .from("jobs")
+      .select("*")
+      .eq("active", true)
+      .order("sort_order", { ascending: true })
+      .order("created_at", { ascending: false });
+    jobs = (data ?? []) as JobRow[];
+  }
+
   return (
     <main>
       {/* ── HERO BAND ─────────────────────────────────────────────────────── */}
@@ -68,29 +54,44 @@ export default function CareersPage() {
           <p className="section-desc">Every role ships real cargo — and real careers.</p>
         </div>
 
-        <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-          {JOBS.map((j, i) => (
-            <div key={i} className="card card-hover" style={{ textAlign: "left" }}>
-              <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
-                <div style={{ flex: "1 1 420px" }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 6 }}>
-                    <h3 className="heading-3" style={{ marginBottom: 0 }}>{j.title}</h3>
-                    <span className="badge badge-primary">{j.type}</span>
+        {jobs.length === 0 ? (
+          <div className="card" style={{ textAlign: "left" }}>
+            <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7 }}>
+              No open positions right now. Check back soon — or email us at{" "}
+              <a href="mailto:info@skybridgeglobal.com" style={{ color: "var(--color-primary-blue)" }}>info@skybridgeglobal.com</a>{" "}
+              to introduce yourself.
+            </p>
+          </div>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {jobs.map((j) => (
+              <div key={j.id} className="card card-hover" style={{ textAlign: "left" }}>
+                <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 16, flexWrap: "wrap" }}>
+                  <div style={{ flex: "1 1 420px" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 6 }}>
+                      <h3 className="heading-3" style={{ marginBottom: 0 }}>{j.title}</h3>
+                      {j.type && <span className="badge badge-primary">{j.type}</span>}
+                    </div>
+                    <div style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", marginBottom: 10 }}>
+                      {[j.dept, j.location].filter(Boolean).join(" · ")}
+                      {j.salary && <> · <strong style={{ color: "var(--color-primary-blue)" }}>{j.salary}</strong></>}
+                    </div>
+                    {j.description && <p style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", lineHeight: 1.65, marginBottom: 12 }}>{j.description}</p>}
+                    {j.requirements.length > 0 && (
+                      <>
+                        <div className="form-label" style={{ marginBottom: 6 }}>Requirements</div>
+                        <ul style={{ paddingLeft: 18, listStyle: "disc", color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", lineHeight: 1.7 }}>
+                          {j.requirements.map((r, k) => <li key={k}>{r}</li>)}
+                        </ul>
+                      </>
+                    )}
                   </div>
-                  <div style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", marginBottom: 10 }}>
-                    {j.dept} · {j.location} · <strong style={{ color: "var(--color-primary-blue)" }}>{j.salary}</strong>
-                  </div>
-                  <p style={{ color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", lineHeight: 1.65, marginBottom: 12 }}>{j.desc}</p>
-                  <div className="form-label" style={{ marginBottom: 6 }}>Requirements</div>
-                  <ul style={{ paddingLeft: 18, listStyle: "disc", color: "var(--color-text-muted)", fontSize: "var(--font-size-sm)", lineHeight: 1.7 }}>
-                    {j.reqs.map((r, k) => <li key={k}>{r}</li>)}
-                  </ul>
+                  <Link href="/contact" className="btn btn-primary" style={{ borderRadius: "var(--radius-md)", flexShrink: 0 }}>Apply Now →</Link>
                 </div>
-                <Link href="/contact" className="btn btn-primary" style={{ borderRadius: "var(--radius-md)", flexShrink: 0 }}>Apply Now →</Link>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </section>
 
       {/* ── BENEFITS ─────────────────────────────────────────────────────── */}

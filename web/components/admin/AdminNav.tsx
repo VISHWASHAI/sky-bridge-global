@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { logout } from "@/app/admin/actions";
 
-export default function AdminNav({ active }: { active: "enquiries" | "shipments" | "coverage" }) {
+export default function AdminNav({ active }: { active: "enquiries" | "shipments" | "coverage" | "careers" }) {
   return (
     <div
       style={{
@@ -19,6 +19,7 @@ export default function AdminNav({ active }: { active: "enquiries" | "shipments"
         <Link href="/admin" style={tab(active === "enquiries")}>Enquiries</Link>
         <Link href="/admin/shipments" style={tab(active === "shipments")}>Shipments</Link>
         <Link href="/admin/service-areas" style={tab(active === "coverage")}>Service Areas</Link>
+        <Link href="/admin/careers" style={tab(active === "careers")}>Careers</Link>
       </div>
       <form action={logout}>
         <button className="btn btn-outline btn-sm" type="submit">Log out</button>

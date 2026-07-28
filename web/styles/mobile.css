@@ -72,6 +72,14 @@
     .mag-card { min-height: 300px !important; }
 }
 
+/* Tablet band: the desktop nav is centred (position:absolute), so at these
+   widths it collides with the "Sky Bridge Global" wordmark. Hide the wordmark
+   here (logo stays); the hamburger takes over below 769px, and there is room
+   for both above 1024px. */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-logo span { display: none; }
+}
+
 /* ==========================================================================
    MOBILE  ≤ 768px
    ========================================================================== */

@@ -48,7 +48,7 @@ export default function SiteFooter() {
         <div>
           <h4 className="footer-heading">Contact</h4>
           <div className="footer-links">
-            <a href="mailto:info@skybridgeglobal.com" className="footer-link">info@skybridgeglobal.com</a>
+            <a href="mailto:info@skybridgeglobals.com" className="footer-link">info@skybridgeglobals.com</a>
             <a href="tel:+919591936070" className="footer-link">+91 95919 36070</a>
             <span className="footer-link">Robertsonpet, Kolar, Karnataka, India</span>
           </div>

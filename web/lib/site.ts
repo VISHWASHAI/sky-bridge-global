@@ -4,5 +4,5 @@
  * the Vercel URL. Trailing slash is stripped so callers can append paths.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL || "https://sky-bridge-global.vercel.app"
+  process.env.NEXT_PUBLIC_SITE_URL || "https://skybridgeglobals.com"
 ).replace(/\/+$/, "");

@@ -25,7 +25,7 @@ export default function ContactPage() {
           </p>
           <div style={{ display: "flex", flexDirection: "column", gap: 20, marginBottom: 32 }}>
             <ContactInfo title="Robertsonpet, Kolar — Karnataka, India" lines={["No. 261, BM Road, Near Industrial Estate", "Andersonpet, Robertsonpet", "Kolar — 563113, Karnataka"]} />
-            <ContactInfo title="Email Us" lines={["info@skybridgeglobal.com"]} />
+            <ContactInfo title="Email Us" lines={["info@skybridgeglobals.com"]} />
             <ContactInfo title="Call Us" lines={["+91 95919 36070"]} />
             <ContactInfo title="Business Hours" lines={["Mon – Sat: 9:30 AM – 6:30 PM IST", "Sunday: Closed"]} />
           </div>

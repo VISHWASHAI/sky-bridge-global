@@ -58,7 +58,7 @@ export default async function CareersPage() {
           <div className="card" style={{ textAlign: "left" }}>
             <p style={{ color: "var(--color-text-muted)", lineHeight: 1.7 }}>
               No open positions right now. Check back soon — or email us at{" "}
-              <a href="mailto:info@skybridgeglobal.com" style={{ color: "var(--color-primary-blue)" }}>info@skybridgeglobal.com</a>{" "}
+              <a href="mailto:info@skybridgeglobals.com" style={{ color: "var(--color-primary-blue)" }}>info@skybridgeglobals.com</a>{" "}
               to introduce yourself.
             </p>
           </div>

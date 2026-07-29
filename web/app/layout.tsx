@@ -68,7 +68,7 @@ const ORG_JSON_LD = {
     "Freight forwarding and customs brokerage company offering air freight, sea cargo, road transport, warehousing and customs clearance.",
   url: SITE_URL,
   logo: `${SITE_URL}/images/logo_badge_circle.webp`,
-  email: "info@skybridgeglobal.com",
+  email: "info@skybridgeglobals.com",
   telephone: "+91-95919-36070",
   address: {
     "@type": "PostalAddress",

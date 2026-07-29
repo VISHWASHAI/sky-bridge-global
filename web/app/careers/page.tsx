@@ -5,7 +5,7 @@ import type { JobRow } from "@/lib/jobs";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Careers — Join Our Logistics Team",
+  title: "Careers — Logistics Jobs in Kolar, Karnataka",
   description:
     "Explore open roles at Sky Bridge Global across logistics operations, customs compliance, and freight sales — based in Kolar, Karnataka with competitive pay, health insurance, and provident fund.",
 };

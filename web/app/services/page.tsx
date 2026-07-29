@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import PinChecker from "@/components/PinChecker";
 
 export const metadata = {
-  title: "Air, Sea & Road Freight Services",
+  title: "Air, Sea & Road Freight Services in Kolar, Karnataka",
   description:
     "Air freight charters, FCL/LCL ocean cargo, GPS-tracked road freight, bonded warehousing and customs brokerage — Sky Bridge Global's freight forwarding services from Kolar, Karnataka for domestic and international shipments.",
 };

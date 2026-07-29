@@ -1,7 +1,7 @@
 import ContactForm from "@/components/ContactForm";
 
 export const metadata = {
-  title: "Contact Us — Get a Freight Quote",
+  title: "Contact Us — Freight Quote in Kolar, Karnataka",
   description:
     "Contact Sky Bridge Global in Robertsonpet, Kolar, Karnataka for air, sea and road freight quotes, customs clearance enquiries, and warehousing support. We respond within one business day.",
 };

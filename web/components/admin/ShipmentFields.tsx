@@ -72,6 +72,17 @@ export default function ShipmentFields({ shipment }: { shipment?: ShipmentRow })
           <input name="dimensions" className="form-control" defaultValue={s?.dimensions ?? ""} placeholder="e.g. 40 × 30 × 25 cm" />
         </div>
       </div>
+
+      <div className="form-group">
+        <label className="form-label">Customer email (optional)</label>
+        <input
+          type="email"
+          name="customer_email"
+          className="form-control"
+          defaultValue={s?.customer_email ?? ""}
+          placeholder="customer@example.com — sends them an email on every status update"
+        />
+      </div>
     </>
   );
 }

@@ -10,6 +10,7 @@ export type ShipmentRow = {
   carrier: string | null;
   current_location: string | null;
   est_delivery: string | null;
+  customer_email: string | null;
   created_at: string;
 };
 

@@ -31,6 +31,7 @@ function shipmentFields(formData: FormData) {
     carrier: field(formData, "carrier"),
     current_location: field(formData, "current_location"),
     est_delivery: field(formData, "est_delivery"),
+    customer_email: field(formData, "customer_email"),
   };
 }
 

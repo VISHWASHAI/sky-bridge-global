@@ -26,7 +26,7 @@ export default function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="footer-heading">Services</h4>
+          <h3 className="footer-heading">Services</h3>
           <div className="footer-links">
             <Link href="/services" className="footer-link">Air Freight</Link>
             <Link href="/services" className="footer-link">Sea Freight</Link>
@@ -36,7 +36,7 @@ export default function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="footer-heading">Company</h4>
+          <h3 className="footer-heading">Company</h3>
           <div className="footer-links">
             <Link href="/about" className="footer-link">About Us</Link>
             <Link href="/careers" className="footer-link">Careers</Link>
@@ -46,7 +46,7 @@ export default function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="footer-heading">Contact</h4>
+          <h3 className="footer-heading">Contact</h3>
           <div className="footer-links">
             <a href="mailto:Skybridgeglobal09@gmail.com" className="footer-link">Skybridgeglobal09@gmail.com</a>
             <a href="tel:+919591936070" className="footer-link">+91 95919 36070</a>

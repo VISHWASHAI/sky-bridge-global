@@ -72,7 +72,7 @@ export default function ServicesPage() {
         <div className="container">
           <div className="section-header">
             <span className="section-label">Logistics Solutions</span>
-            <h2 className="section-title">Freight Routing Capabilities</h2>
+            <h1 className="section-title">Air, Sea &amp; Road Freight Services in Kolar, Karnataka</h1>
             <p className="section-desc">Reliable, cost-effective logistics and supply chain solutions — air freight, sea cargo, road transport, warehousing, and customs brokerage — for businesses of all sizes shipping across domestic and international markets.</p>
           </div>
 

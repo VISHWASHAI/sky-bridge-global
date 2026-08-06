@@ -10,6 +10,7 @@ import SiteFooter from "@/components/SiteFooter";
 import ScrollFx from "@/components/ScrollFx";
 import { SITE_URL } from "@/lib/site";
 import { Inter, Outfit } from "next/font/google";
+import Script from "next/script";
 
 // Self-hosted at build time by next/font — no external Google Fonts request.
 const inter = Inter({
@@ -27,6 +28,10 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  alternates: { canonical: "/" },
+  ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
+    : {}),
   title: {
     default: "Sky Bridge Global | Freight Forwarding & Customs Clearance in Kolar, Karnataka",
     template: "%s | Sky Bridge Global",
@@ -90,6 +95,17 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
       <body>
+        {process.env.NEXT_PUBLIC_GA_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4" strategy="afterInteractive">
+              {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${process.env.NEXT_PUBLIC_GA_ID}');`}
+            </Script>
+          </>
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ORG_JSON_LD) }}

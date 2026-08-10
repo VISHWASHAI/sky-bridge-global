@@ -250,9 +250,11 @@
     gap: 8px;
     color: rgba(255, 255, 255, 0.92);
     font-weight: 600;
+    font-size: 15px;
     white-space: nowrap;
     transition: color 0.2s;
 }
+.top-contact-item svg { width: 16px; height: 16px; }
 .top-contact-item svg { flex-shrink: 0; color: var(--blue-400); }
 .top-contact-item:hover { color: #fff; }
 

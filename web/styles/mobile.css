@@ -90,7 +90,7 @@
     .top-contact-item.is-email span { display: none; }
     .top-contact-bar-inner { justify-content: space-between; gap: var(--space-sm); }
     .top-contact-left { gap: 14px; }
-    .top-contact-item { font-size: 12px; }
+    .top-contact-item { font-size: 13.5px; }
     .top-contact-socials { gap: 6px; }
     .top-contact-socials a { width: 26px; height: 26px; }
 
@@ -384,7 +384,7 @@
 
     /* Keep the brand wordmark from crowding the hamburger on tiny screens */
     .header-logo span { font-size: 14px !important; }
-    .top-contact-item { font-size: 11px !important; }
+    .top-contact-item { font-size: 12.5px !important; }
 }
 
 /* ==========================================================================

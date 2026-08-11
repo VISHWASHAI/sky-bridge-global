@@ -63,7 +63,15 @@ export const metadata: Metadata = {
     description:
       "Air, sea and road freight forwarding, warehousing, and customs brokerage based in Kolar, Karnataka — for domestic and international shipments.",
   },
-  icons: { icon: "/images/logo_badge_circle.webp" },
+  icons: {
+    icon: [
+      { url: "/favicon-48.png", sizes: "48x48", type: "image/png" },
+      { url: "/favicon-96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    shortcut: "/favicon-48.png",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 const ORG_JSON_LD = {
@@ -73,7 +81,7 @@ const ORG_JSON_LD = {
   description:
     "Freight forwarding and customs brokerage company offering air freight, sea cargo, road transport, warehousing and customs clearance.",
   url: SITE_URL,
-  logo: `${SITE_URL}/images/logo_badge_circle.webp`,
+  logo: `${SITE_URL}/logo-512.png`,
   email: "Skybridgeglobal09@gmail.com",
   telephone: "+91-95919-36070",
   address: {

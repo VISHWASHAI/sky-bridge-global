@@ -278,7 +278,9 @@
     box-shadow: 0 8px 26px rgba(37, 211, 102, 0.5);
 }
 @media (max-width: 768px) {
-    .wa-float { width: 52px; height: 52px; left: 16px; bottom: 20px; }
+    /* Lift the WhatsApp button above the Tawk chat bubble so they don't overlap
+       on phones (Tawk often sits bottom-left on mobile). */
+    .wa-float { width: 52px; height: 52px; left: 16px; bottom: 90px; }
 }
 
 .top-contact-item svg { flex-shrink: 0; color: var(--blue-400); }

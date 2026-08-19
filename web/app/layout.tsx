@@ -9,6 +9,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import ScrollFx from "@/components/ScrollFx";
 import TawkChat from "@/components/TawkChat";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { SITE_URL } from "@/lib/site";
 import { Inter, Outfit } from "next/font/google";
 import Script from "next/script";
@@ -124,6 +125,7 @@ export default function RootLayout({
         <SiteHeader />
         {children}
         <SiteFooter />
+        <WhatsAppButton />
         <TawkChat />
       </body>
     </html>

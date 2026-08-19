@@ -255,6 +255,32 @@
     transition: color 0.2s;
 }
 .top-contact-item svg { width: 16px; height: 16px; }
+/* Floating WhatsApp button (bottom-left; Tawk.to chat sits bottom-right) */
+.wa-float {
+    position: fixed;
+    left: 20px;
+    bottom: 24px;
+    z-index: 998;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #25d366;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.wa-float:hover {
+    transform: scale(1.08);
+    color: #fff;
+    box-shadow: 0 8px 26px rgba(37, 211, 102, 0.5);
+}
+@media (max-width: 768px) {
+    .wa-float { width: 52px; height: 52px; left: 16px; bottom: 20px; }
+}
+
 .top-contact-item svg { flex-shrink: 0; color: var(--blue-400); }
 .top-contact-item:hover { color: #fff; }
 
